@@ -1,0 +1,741 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+   
+/*General styles*/
+
+body {
+    font-family: 'Montserrat', Verdana, Arial, sans-serif;
+}
+
+a {
+    color: #903A23;
+}
+
+h1, h2 {
+    font-size: 12px;
+}
+
+p {
+    font-size: 12px;
+    font-weight: bold;
+} 
+
+ul {
+    list-style: none;
+} 
+   
+/*Navigation sector*/
+
+#nav {
+    width: auto;
+    height: 100px;
+    background-color: rgba(215,217,221,0.5);
+}
+
+.logo {
+    position: relative;
+    display: block;
+    margin-left: 20px;
+    top: 15px;
+    -webkit-transform: translateY(50%);
+       -moz-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+         -o-transform: translateY(50%);
+            transform: translateY(50%);
+    max-width: 240px;
+}
+
+ #menu li {
+        position: relative;
+        display:inline-block;
+        margin-left: 20px;
+        color: #903A23;
+        top: 25px;
+        -webkit-transform: translateY(50%);
+           -moz-transform: translateY(50%);
+            -ms-transform: translateY(50%);
+             -o-transform: translateY(50%);
+                transform: translateY(50%);
+}
+
+
+
+/*Header sector*/
+
+#bcg-01 {
+    background: url("../img/bcg-01.jpg");
+    height: 400px;
+    min-width: 320px;
+}
+
+#slogan-01 {
+    position: relative;
+    display: inline-block;
+    top: 20px;
+    margin-left: 5px;
+    color: #D7D9DD;
+    font-size: 12px;
+}
+
+#slogan-02 {
+    position: relative;
+    display: inline-block;
+    top: 20px;
+    margin-left: 5px;
+    color: #252525;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#rect-01 {
+    position: relative;
+    display: table;
+    background-color: rgb(215,217,221);
+    width: 320px;
+    height: 180px;
+    top: 40px;
+    margin: 0 auto;
+}
+
+/*Main sector*/
+
+#wide-screen {
+    display: none;
+}
+
+#small-screen {
+    display: block;
+}
+
+#currency-rate {
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+.currency-name {
+    position: relative;
+    top: 30px;
+    left: 10px;
+} 
+
+.rate {
+    position: relative;
+    top: 30px;
+    right: 20px;
+}
+
+.select-country, .country {
+    position: relative;
+    top: 45px;
+    color: #903a23;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+} 
+
+.country {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.select-country, .country p {
+    font-weight: 400;
+}
+
+.line {
+    position: relative;
+    top: 60px;
+    border-bottom: 5px solid #ebebeb;
+} 
+
+.ranking {
+    position: relative;
+    display: block;
+    text-align: center;
+    top: 80px;
+} 
+
+.ranking-header {
+    position: relative;
+    background-color: #ebebeb;
+    height: 400px;
+    top: 110px;
+}
+
+.compare-desc {
+    position: relative;
+    display: block;
+    top: 35px;
+    left: 20px;
+}
+
+.compare-desc p {
+    font-size: 14px;
+} 
+
+.compare-group {
+    position: relative;
+    display: block;
+    top: 40px;
+}
+
+.compare-title {
+    position: relative;
+    display: block;
+    top: 40px;
+} 
+
+.company-name {
+    position: relative;
+    display: block;
+    text-align: center;
+} 
+
+.compare-elem {
+    position: relative;
+    display: block;
+    top: 40px;
+    /*margin-left: 20px;*/
+} 
+
+.compare-title p {
+    font-size: 10px;
+} 
+
+.compare-elem p {
+    font-size: 14px
+} 
+
+#rank-01 {
+    position: relative;
+    display: block;
+    top: 140px;
+} 
+
+#rank-02 {
+    position: relative;
+    display: block;
+    top: 150px;
+} 
+
+#rank-03 {
+    position: relative;
+    display: block;
+    top: 160px;
+} 
+
+#rank-04 {
+    position: relative;
+    display: block;
+    top: 170px;
+} 
+
+#rank-05 {
+    position: relative;
+    display: block;
+    top: 180px;
+} 
+
+#rank-06 {
+    position: relative;
+    display: block;
+    top: 190px;
+} 
+
+#rank-07 {
+    position: relative;
+    display: block;
+    top: 200px;
+} 
+
+.glyphicon-star {
+    color: #f9c22c;
+    left: 30px;
+}
+
+.company-name {
+    position: relative;
+    display: block;
+    -webkit-transform: translateY(-30%);
+       -moz-transform: translateY(-30%);
+        -ms-transform: translateY(-30%);
+         -o-transform: translateY(-30%);
+            transform: translateY(-30%);
+} 
+
+.countries-list {
+    display: none;
+} 
+
+#country-transf {
+    position: relative;
+    display: block;
+    top: 100px;
+}
+
+.transf-list {
+    display: inline-block;
+    padding: 10px;
+    border-right: 2px solid #fff;
+    height: 35px;
+} 
+
+.transf-item {
+    font-size: 12px;
+    color: #fff;
+    font-weight: 400;
+} 
+
+#footer {
+    position: relative;
+    display: block;
+    top: 220px;
+    /*width: auto;*/
+    height: 200px;
+    background-color: #252525;
+} 
+
+h3.service-desc {
+    position: relative;
+    top: 30px;
+    font-size: 8px;
+    font-weight: 400;
+    color: #FFF;
+    text-align: center;
+} 
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+   
+@media only screen and (min-width: 992px) {
+
+    h1, h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .logo {
+        margin-left: 20px;
+        top: 25px;
+    }
+
+    /*Header sector*/
+
+    #slogan-01 {
+        top: 100px;
+        font-size: 18px;
+    }
+
+    #slogan-02 {
+        top: 100px;
+        font-size: 18px;
+    }
+
+    #rect-01 {
+        width: 395px;
+        height: 214px;
+        top: 100px;
+        left: 0;
+    }
+
+    /*Main sector*/
+    
+    #wide-screen {
+        display: block;
+    }
+
+    #small-screen {
+        display: none;
+    }
+
+    #currency-rate {
+        position: relative;
+        top: 20px;
+        left: 20px;
+    }
+
+    .currency-name {
+        position: relative;
+        top: 30px;
+        left: 10px;
+    } 
+
+    .rate {
+        position: relative;
+        top: 30px;
+        right: 20px;
+    }
+
+    .select-country, .country {
+        position: relative;
+        top: 45px;
+        color: #903a23;
+        font-size: 18px;
+        font-weight: regular;
+        text-transform: uppercase;
+    } 
+
+    .country {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .select-country, .country p {
+        font-weight: 400;
+    }
+
+    .line {
+        position: relative;
+        top: 60px;
+        border-bottom: 5px solid #ebebeb;
+    } 
+
+    .ranking {
+        position: relative;
+        display: block;
+        text-align: center;
+        top: 80px;
+    } 
+
+    .ranking-header {
+        position: relative;
+        background-color: #ebebeb;
+        height: 145px;
+        top: 110px;
+    }
+
+    .compare-desc {
+        position: relative;
+        display: block;
+        top: 35px;
+        left: 20px;
+    }
+
+    .compare-desc p {
+        font-size: 14px;
+    } 
+
+    .compare-group {
+        position: relative;
+        display: block;
+        top: 40px;
+    }
+
+    .compare-title {
+        position: relative;
+        display: block;
+        vertical-align: center;
+        top: 20px;
+    } 
+
+    .compare-elem {
+        position: relative;
+        display: block;
+        vertical-align: center;
+        top: 20px;
+        /*margin-left: 20px;*/
+    } 
+
+    .compare-title p {
+        font-size: 10px;
+    } 
+
+    .compare-elem p {
+        font-size: 14px
+    } 
+
+    #rank-01 {
+        position: relative;
+        display: block;
+        top: 140px;
+    } 
+
+    #rank-02 {
+        position: relative;
+        display: block;
+        top: 150px;
+    } 
+
+    #rank-03 {
+        position: relative;
+        display: block;
+        top: 160px;
+    } 
+
+    #rank-04 {
+        position: relative;
+        display: block;
+        top: 170px;
+    } 
+
+    #rank-05 {
+        position: relative;
+        display: block;
+        top: 180px;
+    } 
+
+    #rank-06 {
+        position: relative;
+        display: block;
+        top: 190px;
+    } 
+
+    #rank-07 {
+        position: relative;
+        display: block;
+        top: 200px;
+    } 
+
+    .glyphicon-star {
+        color: #f9c22c;
+        left: 30px;
+    }
+
+    .company-name {
+        position: relative;
+        display: block;
+        -webkit-transform: translateY(-30%);
+           -moz-transform: translateY(-30%);
+            -ms-transform: translateY(-30%);
+             -o-transform: translateY(-30%);
+                transform: translateY(-30%);
+    } 
+
+    .countries-list {
+        position: relative;
+        display: block;
+        /*width: auto;*/
+        height: 400px;
+        top: 230px;
+        background-color: #686d72;
+    } 
+
+    #country-transf {
+        position: relative;
+        display: block;
+        top: 100px;
+    }
+
+    .transf-list {
+        display: inline-block;
+        padding: 10px;
+        border-right: 2px solid #fff;
+        height: 35px;
+    } 
+
+    .transf-item {
+        font-size: 12px;
+        color: #fff;
+        font-weight: 400;
+    } 
+
+    #footer {
+        position: relative;
+        display: block;
+        top: 230px;
+        /*width: auto;*/
+        height: 200px;
+        background-color: #252525;
+    } 
+
+    h3.service-desc {
+        position: relative;
+        top: 50px;
+        font-size: 10px;
+        font-weight: 400;
+        color: #FFF;
+        text-align: center;
+    } 
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+@media only screen and (min-width: 35em) {
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
