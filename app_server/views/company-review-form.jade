@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    #mine-wrapper
+        #review-page.container
+      #review-header.row.page-header
+          .col-lg-12.text-center
+            h1 Review Transfer Go           
+      #review-body.row
+        .col-xs-11
+          form.form-horizontal(action='/company', method='get', role='form')
+            .form-group
+              label.col-xs-10.col-sm-2.control-label(for='name') Imie i nazwisko
+              |                                 
+              .col-xs-12.col-sm-10
+                input#name.form-control(type='text', name='name')
+            |                             
+            .form-group
+              label.col-xs-10.col-sm-2.control-label(for='rating')
+                p Ocena
+                |                                         
+                select#review-rating.form-control.input-sm(name='rating')
+                  option(value='5') 5
+                  |                                             
+                  option(value='4') 4
+                  |                                             
+                  option(value='3') 3
+                  |                                             
+                  option(value='2') 2
+                  |                                             
+                  option(value='1') 1
+            |                             
+            .form-group
+              label.col-sm-2.control-label(for='review') Opinia
+              |                                 
+              .col-sm-10
+                textarea#review.form-control(name='review', cols='30', rows='5')
+            |                             
+            button.btn.btn-default.pull-right Dodaj opinie
+        |                     
+        .col-xs-12.col-md-4

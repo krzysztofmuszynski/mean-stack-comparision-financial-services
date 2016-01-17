@@ -63,7 +63,7 @@ body {
 }
 
 a {
-    color: #903A23;
+    color: #2f86dd;
 }
 
 h1, h2 {
@@ -77,6 +77,14 @@ p {
 
 ul {
     list-style: none;
+} 
+
+.red {
+color: red;
+}
+
+.green {
+    color: green;
 } 
    
 /*Navigation sector*/
@@ -118,9 +126,9 @@ ul {
 /*Header sector*/
 
 #bcg-01 {
-    background: url("../img/bcg-01.jpg");
+    background: url("../images/bcg-01.jpg");
     height: 400px;
-    min-width: 320px;
+    min-width: 360px;
 }
 
 #slogan-01 {
@@ -358,8 +366,136 @@ h3.service-desc {
     font-weight: 400;
     color: #FFF;
     text-align: center;
+}
+
+/*Company page*/
+
+#info-company-01 {
+    position: relative;
+    display: block;
+    height: 320px;
+    top: 80px;
+    background-color: #f4f4f4;
 } 
 
+#info-company-02 {
+    position: relative;
+    display: block;
+    top: 120px;
+} 
+
+.info-company-logo {
+    position: relative;
+    display: block;
+    top: 60px;
+}
+
+.info-company-name,
+.info-company-website {
+    position: relative;
+    display: block;
+    top: 100px;
+} 
+
+.info-company-line {
+    position: relative;
+    display: block;
+    height: 40px;
+    top: 70px;
+    background-color: #ebebeb;
+}  
+
+.info-company-about {
+    position: relative;
+    top: 7px;
+} 
+
+.info-about-company {
+    position: relative;
+    display: block;
+    top: 40px;
+} 
+
+.info-about-company p {
+    margin-top: 20px;
+}
+
+.info-company-map {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+} 
+
+#info-company-03 {
+    position: relative;
+    display: block;
+    top: 180px;
+} 
+
+.review-btn {
+    margin-bottom: 0;
+} 
+
+.btn-bgc-blue {
+    background-color: #0084da;
+}
+
+.btn-bgc-blue:hover,
+.btn-bgc-blue:active {
+    background-color: #0173bd;
+    -webkit-transition: 0.3s all;
+       -moz-transition: 0.3s all;
+        -ms-transition: 0.3s all;
+         -o-transition: 0.3s all;
+            transition: 0.3s all;
+}  
+
+.review-details {
+    position: relative;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: #e5f2fb;
+    min-height: 70px;
+} 
+
+.vertical-center {
+    top: 50%;
+    -webkit-transform: translateY(50%);
+       -moz-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+         -o-transform: translateY(50%);
+            transform: translateY(50%);
+} 
+
+.review-stars {
+    position: relative;
+    display: block;
+    text-align: center;
+    left:-30px;
+    margin-bottom: 10px;
+} 
+
+/*Review page*/
+
+/*#review-body {
+    position: relative;
+    display: block;
+    left: 50%;
+    -webkit-transform: translate(-28%);
+       -moz-transform: translate(-28%);
+        -ms-transform: translate(-28%);
+         -o-transform: translate(-28%);
+            transform: translate(-28%);
+}*/
+
+/*About page*/
+
+#about {
+    position: relative;
+    display: block;
+    top: 100px;
+} 
 
 /* ==========================================================================
    Media Queries
@@ -560,7 +696,7 @@ h3.service-desc {
             -ms-transform: translateY(-30%);
              -o-transform: translateY(-30%);
                 transform: translateY(-30%);
-    } 
+    }
 
     .countries-list {
         position: relative;

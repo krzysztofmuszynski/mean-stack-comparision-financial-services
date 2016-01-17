@@ -1,12 +1,76 @@
-doctype html
-html
+doctype //if lt IE 7
+html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='')  
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8(lang='')  
+//if IE 8
+  html.no-js.lt-ie9(lang='')  
+// [if gt IE 8] <!
+|  
+html.no-js(lang='')
+  // <![endif]
   head
-    title= title
+    meta(charset='utf-8')
+    |         
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    |         
+    title
+    |         
+    meta(name='description', content='')
+    |         
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    |         
+    //- link(rel='apple-touch-icon', href='apple-touch-icon.png')
+    |         
+    link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+    |         
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    |         
     link(rel='stylesheet', href='/stylesheets/normalize.min.css')
-    link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
+    |         
     link(rel='stylesheet', href='/stylesheets/main.css')
+    |         
+    script(src='/javascripts/modernizr-2.8.3-respond-1.4.2.min.js')
+  |     
   body
-    block content
+    |         
+    nav#nav
+      .container
+        .row
+          .col-sm-12.col-md-3
+            a(href='http://www.przelewdokraju.pl')
+              img.logo(src='/images/logo.png', alt='Przelewy Do Kraju')
+          |                     
+          .col-sm-12.col-md-9
+            ul#menu.pull-right
+              li
+                a(href='#') Wybierz kraj
+              |                             
+              li
+                a(href='#') Kursy walut
+              |                             
+              li
+                a(href='#') Rejestracja
+    #container-block  
+      block content
 
-  script(src='/javascripts/jquery.1.12.0.min.js')
-  script(src='/bootstrap/js/bootstrap.min.js')
+    footer
+      #footer.container-fluid
+        .container
+          .col-xs-12
+            h3.service-desc
+              | Por&oacute;wnanie ofert zosta&lstrok;o przygotowane w oparciu o inofrmacje dostepne na stronach internetowych prezentowanych firm.
+              br
+              |  W zwiazku z tym porownanie nie gwarantuje ze w danym momencie oferta nie ulegla zmianie. 
+              br
+              |  Porownanie ma na celu przyblizenie ofert i pokazania roznic ale w celu upewnienia sie 
+              br
+              | co do poprawnosci danych prosze o sprawdzenie ofert bezposrednio na stronach podanych firm.
+    |         
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+    |         
+    script.
+      window.jQuery || document.write('<script src="/javascripts/vendor/jquery-1.11.2.min.js"><\\/script>')
+    |         
+    script(src='/javascripts/plugins.js')
+    |         
+    script(src='/javascripts/main.js')

@@ -1,8 +1,18 @@
 var express = require('express');
 var router = express.Router();
-var ctrlMain = require('../controllers/main');
+var ctrlCompanies = require('../controllers/companies');
+var ctrlOthers = require('../controllers/others');
 
-/* GET home page. */
-router.get('/', ctrlMain.index);
+// GET companies pages.
+
+router.get('/', ctrlCompanies.homelist);
+
+router.get('/company', ctrlCompanies.companyInfo);
+
+router.get('/company/review/new', ctrlCompanies.addReview);
+
+// GET other pages.
+
+router.get('/about', ctrlOthers.about);
 
 module.exports = router;
