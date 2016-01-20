@@ -1,5 +1,7 @@
 extends layout
 
+include _includes/sharedHTMLfunctions
+
 block content
   header
       #bcg-01.container-fluid
@@ -8,21 +10,9 @@ block content
             .container-fluid
               .col-xs-12.col-sm-6
                 h1#slogan-01
-                  | Poniewaz nikt nie lubi przeplacac 
-                  br
-                  |  przygotowalismy zestawienie 
-                  br
-                  |  najtanszych przelewow zagranicznych.
-                  br
-                  |                                 
-                  br
-                  br
-                  | Mam nadzieje, ze dzieki temu uda sie 
-                  br
-                  | Tobie zaoszczedzic spora sume pieniedzy.
-                |                             
+                  = pageHeader.title                             
                 h2#slogan-02
-                  | Zestawienie znajdziesz ponizej.
+                  = pageHeader.subtitle
               |                         
               .col-xs-12.col-sm-6
                 #rect-01.pull-right
@@ -103,634 +93,510 @@ block content
       .container.line
       |             
       .container
-        h2.ranking Ranking przelewow zagranicznych z Wielkiej Brytanii do Polski
+        h2.ranking= rankingHeader.title
       |             
       #wide-screen
         .container.ranking-header
           row
             .col-xs-12.compare-desc
-              p Aktualne porownanie: kwota przelewu 1000 funtow
+              p= rankingHeader.description 
             |                         
             .col-xs-12.compare-group
               .compare-title.col-xs-2
-                p Nazwa firmy
+                p= rankingHeader.companyName
               |                             
               .compare-title.col-xs-2
-                p Kurs wymiany
+                p= rankingHeader.currencyRate
               |                             
               .compare-title.col-xs-1
-                p Oplata
+                p= rankingHeader.fee
               |                             
               .compare-title.col-xs-2
-                p Kwota za 1000
+                p= rankingHeader.amount
               |                             
               .compare-title.col-xs-1
-                p Strata
+                p= rankingHeader.loss
               |                             
               .compare-title.col-xs-1
-                p Rzecz. kurs
+                p= rankingHeader.realRate
               |                             
               .compare-title.col-xs-1
-                p Aktualizacja
+                p= rankingHeader.update
               |                             
               .compare-title.col-xs-2
-                p Opinie klient wg. Trustpilot
+                p= rankingHeader.rating
         |                 
         #rank-01.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-2
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img.maxwidth(src= transfer01.imgSrc alt= transfer01.imgAlt)
               |                             
               .compare-elem.col-xs-2
-                p 5.8989
+                p= transfer01.currencyRate
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer01.fee
               |                             
               .compare-elem.col-xs-2
-                p 5865.90
+                p= transfer01.amount
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer01.loss
               |                             
               .compare-elem.col-xs-1
-                p 5.8659
+                p= transfer01.realRate
               |                             
               .compare-elem.col-xs-1
-                p 06.01.2016
+                p= transfer01.update
               |                             
               .compare-elem.col-xs-2
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-        |                 
+                +outputRating(transfer01.rating)
         #rank-02.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-2
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img.maxwidth(src= transfer02.imgSrc alt= transfer02.imgAlt)
               |                             
               .compare-elem.col-xs-2
-                p 5.8989
+                p= transfer02.currencyRate
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer02.fee
               |                             
               .compare-elem.col-xs-2
-                p 5865.90
+                p= transfer02.amount
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer02.loss
               |                             
               .compare-elem.col-xs-1
-                p 5.8659
+                p= transfer02.realRate
               |                             
               .compare-elem.col-xs-1
-                p 06.01.2016
+                p= transfer02.update
               |                             
               .compare-elem.col-xs-2
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-        |                 
+                +outputRating(transfer02.rating)
         #rank-03.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-2
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img.maxwidth(src= transfer03.imgSrc alt= transfer03.imgAlt)
               |                             
               .compare-elem.col-xs-2
-                p 5.8989
+                p= transfer03.currencyRate
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer03.fee
               |                             
               .compare-elem.col-xs-2
-                p 5865.90
+                p= transfer03.amount
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer03.loss
               |                             
               .compare-elem.col-xs-1
-                p 5.8659
+                p= transfer03.realRate
               |                             
               .compare-elem.col-xs-1
-                p 06.01.2016
+                p= transfer03.update
               |                             
               .compare-elem.col-xs-2
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-        |                 
+                +outputRating(transfer03.rating)
         #rank-04.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-2
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img.maxwidth(src= transfer04.imgSrc alt= transfer04.imgAlt)
               |                             
               .compare-elem.col-xs-2
-                p 5.8989
+                p= transfer04.currencyRate
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer04.fee
               |                             
               .compare-elem.col-xs-2
-                p 5865.90
+                p= transfer04.amount
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer04.loss
               |                             
               .compare-elem.col-xs-1
-                p 5.8659
+                p= transfer04.realRate
               |                             
               .compare-elem.col-xs-1
-                p 06.01.2016
+                p= transfer04.update
               |                             
               .compare-elem.col-xs-2
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-        |                 
+                +outputRating(transfer04.rating)
         #rank-05.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-2
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img.maxwidth(src= transfer05.imgSrc alt= transfer05.imgAlt)
               |                             
               .compare-elem.col-xs-2
-                p 5.8989
+                p= transfer05.currencyRate
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer05.fee
               |                             
               .compare-elem.col-xs-2
-                p 5865.90
+                p= transfer05.amount
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer05.loss
               |                             
               .compare-elem.col-xs-1
-                p 5.8659
+                p= transfer05.realRate
               |                             
               .compare-elem.col-xs-1
-                p 06.01.2016
+                p= transfer05.update
               |                             
               .compare-elem.col-xs-2
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-        |                 
+                +outputRating(transfer05.rating)
         #rank-06.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-2
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img.maxwidth(src= transfer06.imgSrc alt= transfer06.imgAlt)
               |                             
               .compare-elem.col-xs-2
-                p 5.8989
+                p= transfer06.currencyRate
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer06.fee
               |                             
               .compare-elem.col-xs-2
-                p 5865.90
+                p= transfer06.amount
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer06.loss
               |                             
               .compare-elem.col-xs-1
-                p 5.8659
+                p= transfer06.realRate
               |                             
               .compare-elem.col-xs-1
-                p 06.01.2016
+                p= transfer06.update
               |                             
               .compare-elem.col-xs-2
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-        |                 
+                +outputRating(transfer06.rating)
         #rank-07.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-2
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img.maxwidth(src= transfer07.imgSrc alt= transfer07.imgAlt)
               |                             
               .compare-elem.col-xs-2
-                p 5.8989
+                p= transfer07.currencyRate
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer07.fee
               |                             
               .compare-elem.col-xs-2
-                p 5865.90
+                p= transfer07.amount
               |                             
               .compare-elem.col-xs-1
-                p brak
+                p= transfer07.loss
               |                             
               .compare-elem.col-xs-1
-                p 5.8659
+                p= transfer07.realRate
               |                             
               .compare-elem.col-xs-1
-                p 06.01.2016
+                p= transfer07.update
               |                             
               .compare-elem.col-xs-2
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
-                |                             
-                span.glyphicon.glyphicon-star
+                +outputRating(transfer07.rating)
       // End wide screen
       #small-screen
         #rank-01.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-12
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img(src= transfer01.imgSrc, alt= transfer01.imgAlt)
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kurs wymiany
               .compare-elem.col-xs-6
-                p.pull-right 5.8989
+                p.pull-right= transfer01.currencyRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Oplata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer01.fee
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kwota za 1000
               .compare-elem.col-xs-6
-                p.pull-right 5865.90
+                p.pull-right= transfer01.amount
               |                             
               .compare-title.col-xs-6
                 p.pull-left Strata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer01.loss
               |                             
               .compare-title.col-xs-6
                 p.pull-left Rzecz. kurs
               .compare-elem.col-xs-6
-                p.pull-right 5.8659
+                p.pull-right= transfer01.realRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Aktualizacja
               .compare-elem.col-xs-6
-                p.pull-right 06.01.2016
+                p.pull-right= transfer01.update
               |                             
               .compare-title.col-xs-6
                 p.pull-left Opinie klient wg. Trustpilot
               |                             
               .compare-elem.col-xs-6
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-        |                 
+                +outputRating(transfer01.rating)
         #rank-02.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-12
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img(src= transfer02.imgSrc, alt= transfer02.imgAlt)
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kurs wymiany
               .compare-elem.col-xs-6
-                p.pull-right 5.8989
+                p.pull-right= transfer02.currencyRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Oplata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer02.fee
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kwota za 1000
               .compare-elem.col-xs-6
-                p.pull-right 5865.90
+                p.pull-right= transfer02.amount
               |                             
               .compare-title.col-xs-6
                 p.pull-left Strata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer02.loss
               |                             
               .compare-title.col-xs-6
                 p.pull-left Rzecz. kurs
               .compare-elem.col-xs-6
-                p.pull-right 5.8659
+                p.pull-right= transfer02.realRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Aktualizacja
               .compare-elem.col-xs-6
-                p.pull-right 06.01.2016
+                p.pull-right= transfer02.update
               |                             
               .compare-title.col-xs-6
                 p.pull-left Opinie klient wg. Trustpilot
               |                             
               .compare-elem.col-xs-6
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-        |                 
+                +outputRating(transfer02.rating)
         #rank-03.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-12
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img(src= transfer03.imgSrc, alt= transfer03.imgAlt)
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kurs wymiany
               .compare-elem.col-xs-6
-                p.pull-right 5.8989
+                p.pull-right= transfer03.currencyRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Oplata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer03.fee
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kwota za 1000
               .compare-elem.col-xs-6
-                p.pull-right 5865.90
+                p.pull-right= transfer03.amount
               |                             
               .compare-title.col-xs-6
                 p.pull-left Strata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer03.loss
               |                             
               .compare-title.col-xs-6
                 p.pull-left Rzecz. kurs
               .compare-elem.col-xs-6
-                p.pull-right 5.8659
+                p.pull-right= transfer03.realRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Aktualizacja
               .compare-elem.col-xs-6
-                p.pull-right 06.01.2016
+                p.pull-right= transfer03.update
               |                             
               .compare-title.col-xs-6
                 p.pull-left Opinie klient wg. Trustpilot
               |                             
               .compare-elem.col-xs-6
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-        |                 
+                +outputRating(transfer03.rating)
         #rank-04.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-12
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img(src= transfer04.imgSrc, alt= transfer04.imgAlt)
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kurs wymiany
               .compare-elem.col-xs-6
-                p.pull-right 5.8989
+                p.pull-right= transfer04.currencyRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Oplata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer04.fee
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kwota za 1000
               .compare-elem.col-xs-6
-                p.pull-right 5865.90
+                p.pull-right= transfer04.amount
               |                             
               .compare-title.col-xs-6
                 p.pull-left Strata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer04.loss
               |                             
               .compare-title.col-xs-6
                 p.pull-left Rzecz. kurs
               .compare-elem.col-xs-6
-                p.pull-right 5.8659
+                p.pull-right= transfer04.realRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Aktualizacja
               .compare-elem.col-xs-6
-                p.pull-right 06.01.2016
+                p.pull-right= transfer04.update
               |                             
               .compare-title.col-xs-6
                 p.pull-left Opinie klient wg. Trustpilot
               |                             
               .compare-elem.col-xs-6
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-        |                 
+                +outputRating(transfer04.rating)
         #rank-05.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-12
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img(src= transfer05.imgSrc, alt= transfer05.imgAlt)
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kurs wymiany
               .compare-elem.col-xs-6
-                p.pull-right 5.8989
+                p.pull-right= transfer05.currencyRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Oplata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer05.fee
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kwota za 1000
               .compare-elem.col-xs-6
-                p.pull-right 5865.90
+                p.pull-right= transfer05.amount
               |                             
               .compare-title.col-xs-6
                 p.pull-left Strata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer05.loss
               |                             
               .compare-title.col-xs-6
                 p.pull-left Rzecz. kurs
               .compare-elem.col-xs-6
-                p.pull-right 5.8659
+                p.pull-right= transfer05.realRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Aktualizacja
               .compare-elem.col-xs-6
-                p.pull-right 06.01.2016
+                p.pull-right= transfer05.update
               |                             
               .compare-title.col-xs-6
                 p.pull-left Opinie klient wg. Trustpilot
               |                             
               .compare-elem.col-xs-6
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-        |                 
+                +outputRating(transfer05.rating)
         #rank-06.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-12
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img(src= transfer06.imgSrc, alt= transfer06.imgAlt)
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kurs wymiany
               .compare-elem.col-xs-6
-                p.pull-right 5.8989
+                p.pull-right= transfer06.currencyRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Oplata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer06.fee
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kwota za 1000
               .compare-elem.col-xs-6
-                p.pull-right 5865.90
+                p.pull-right= transfer06.amount
               |                             
               .compare-title.col-xs-6
                 p.pull-left Strata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer06.loss
               |                             
               .compare-title.col-xs-6
                 p.pull-left Rzecz. kurs
               .compare-elem.col-xs-6
-                p.pull-right 5.8659
+                p.pull-right= transfer06.realRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Aktualizacja
               .compare-elem.col-xs-6
-                p.pull-right 06.01.2016
+                p.pull-right= transfer06.update
               |                             
               .compare-title.col-xs-6
                 p.pull-left Opinie klient wg. Trustpilot
               |                             
               .compare-elem.col-xs-6
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-        |                 
+                +outputRating(transfer06.rating)
         #rank-07.container.ranking-header
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-12
-                img(src='images/transferwise.jpg', alt='TransferWise Logo')
+                img(src= transfer07.imgSrc, alt= transfer07.imgAlt)
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kurs wymiany
               .compare-elem.col-xs-6
-                p.pull-right 5.8989
+                p.pull-right= transfer07.currencyRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Oplata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer07.fee
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kwota za 1000
               .compare-elem.col-xs-6
-                p.pull-right 5865.90
+                p.pull-right= transfer07.amount
               |                             
               .compare-title.col-xs-6
                 p.pull-left Strata
               .compare-elem.col-xs-6
-                p.pull-right brak
+                p.pull-right= transfer07.loss
               |                             
               .compare-title.col-xs-6
                 p.pull-left Rzecz. kurs
               .compare-elem.col-xs-6
-                p.pull-right 5.8659
+                p.pull-right= transfer07.realRate
               |                             
               .compare-title.col-xs-6
                 p.pull-left Aktualizacja
               .compare-elem.col-xs-6
-                p.pull-right 06.01.2016
+                p.pull-right= transfer07.update
               |                             
               .compare-title.col-xs-6
                 p.pull-left Opinie klient wg. Trustpilot
               |                             
               .compare-elem.col-xs-6
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
-                |                             
-                span.glyphicon.glyphicon-star.pull-right
+                +outputRating(transfer07.rating)
       // End small screen
       .container-fluid.countries-list
         .container

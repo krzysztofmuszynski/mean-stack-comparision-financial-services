@@ -255,6 +255,10 @@ color: red;
     text-align: center;
 } 
 
+.maxwidth {
+    max-width: 150px;
+} 
+
 .compare-elem {
     position: relative;
     display: block;
@@ -367,6 +371,10 @@ h3.service-desc {
     color: #FFF;
     text-align: center;
 }
+
+.glyphicon-star-empty {
+    left: 30px;
+} 
 
 /*Company page*/
 
