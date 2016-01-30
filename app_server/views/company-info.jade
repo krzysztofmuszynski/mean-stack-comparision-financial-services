@@ -1,144 +1,82 @@
 extends layout
 
+include _includes/sharedHTMLfunctions
+
 block content
   #mine-wrapper
       #info-company-main.container
         .row
           .col-xs-12.col-sm-4.info-company-logo
-            img(src='/images/transfergo.jpg', alt='TransferGo')
+            img(src= pageHeader.imgSrc, alt= pageHeader.companyName)
           |                         
           .col-xs-12.col-sm-4.info-company-name.text-center
-            p Nazwa firmy: TransferGo
+            p Nazwa firmy: #{pageHeader.companyName}
           |                         
           .col-xs-12.col-sm-4.info-company-website.text-center
-            p strona: www.transfergo.com
+            p strona: #{pageHeader.websiteAddress}
       |                 
       .container.line
       |                 
       .container.info-company-line
-        p.info-company-about TransferGo informacje o firmie
+        p.info-company-about #{pageHeader.companyName} informacje o firmie
       |                 
       #info-company-01.container
         .row
           .col-xs-12.col-sm-4.info-about-company
             .col-xs-12.text-center
-              p Data powstania firmy: 18.01.2012
+              p Data powstania firmy: #{companyDetails.incorporatedDate}
             |                             
             .col-xs-12.text-center
               p Wlasciciel i zarzad:
             |                             
             .col-xs-12.text-center
-              p
-                | Daumantas Dvilinskas
+              p= companyDetails.manager
                 br
-                | Co-Founder and CEO
+                p= companyDetails.role
           |                         
           .col-xs-12.col-sm-4.info-about-company
             .col-xs-12.text-center
-              p Zakres dzialalnosci: Finanse  
+              p Zakres dzialalnosci: #{companyDetails.activity}  
             |                             
             .col-xs-12.text-center
-              p Sektor dzialalnosci: Banki
+              p Sektor dzialalnosci: #{companyDetails.sector}  
             |                             
             .col-xs-12.text-center
-              p Status firmy: Prywatna
+              p Status firmy: #{companyDetails.type}  
           |                         
           .col-xs-12.col-sm-4.info-about-company
             .col-xs-12.text-center
-              p Minimalny transfer: brak
+              p Minimalny transfer: #{companyDetails.minAmount}  
             |                             
             .col-xs-12.text-center
-              p Waluty obslugiwane: 16
+              p Waluty obslugiwane: #{companyDetails.currency}  
             |                             
             .col-xs-12.text-center
               p
-                | Adres firmy: 
-                br
-                |                                     One Canada Square Level 49,
-                br
-                |                                     Canary Wharf, London
-                br
-                |                                     E14 5AB, United Kingdom
+                | Adres firmy: #{companyDetails.address}
       |                 
       #info-company-02.container
         .row
-          img.info-company-map.img-responsive.img-rounded(src='http://maps.googleapis.com/maps/api/staticmap?center=51.5048458,-0.0218651&zoom=17&size=1170x250&sensor=false&markers=51.5048458,-0.0218651&scale=2', alt='Google Maps')
+          img.info-company-map.img-responsive.img-rounded(src='http://maps.googleapis.com/maps/api/staticmap?center=#{companyDetails.coords.latitude},#{companyDetails.coords.longitude}&zoom=17&size=1170x250&sensor=false&markers=51.5048458,-0.0218651&scale=2', alt='Google Maps')
       |                 
       #info-company-03.container.customer-review
         .row
           .col-xs-12
             .col-xs-6
-              p Opinie o TransferGo
+              p Opinie o #{pageHeader.companyName}
             |                             
             .col-xs-6
-              a.btn.btn-default.pull-right.btn-bgc-blue(href='/company/review/new')
+              a.btn.btn-default.pull-right.btn-bgc-blue(href= companyDetails.formAddress)
                 p.review-btn Dodaj opinie
-          |                         
-          .col-xs-12.review-details
-            .col-xs-12.col-sm-4.vertical-center
-              span.review-stars.text-center
-                span.glyphicon.glyphicon-star
-                |                                     
-                span.glyphicon.glyphicon-star
-                |                                     
-                span.glyphicon.glyphicon-star
-                |                                     
-                span.glyphicon.glyphicon-star
-                |                                     
-                span.glyphicon.glyphicon-star
-            |                             
-            .col-xs-12.col-sm-4.vertical-center
-              p.text-center Autor: Lukasz Maciejewski
-            |                             
-            .col-xs-12.col-sm-4.vertical-center
-              p.text-center Data: 02.01.2016
-          |                         
-          .col-xs-12
-            p.text-center
-              | Przelew zostal zrealizowany expresowo, Pieniadze byly na koncie nastepnego dnia. Super polecam.
-          |                         
-          .col-xs-12.review-details
-            .col-xs-12.col-sm-4.vertical-center
-              span.review-stars.text-center
-                span.glyphicon.glyphicon-star
-                |                                     
-                span.glyphicon.glyphicon-star
-                |                                     
-                span.glyphicon.glyphicon-star
-                |                                     
-                span.glyphicon.glyphicon-star
-                |                                     
-                span.glyphicon.glyphicon-star
-            |                             
-            .col-xs-12.col-sm-4.vertical-center
-              p.text-center Autor: Lukasz Maciejewski
-            |                             
-            .col-xs-12.col-sm-4.vertical-center
-              p.text-center Data: 02.01.2016
-          |                         
-          .col-xs-12
-            p.text-center
-              | Przelew zostal zrealizowany expresowo, Pieniadze byly na koncie nastepnego dnia. Super polecam.
-          |                         
-          .col-xs-12.review-details
-            .col-xs-12.col-sm-4.vertical-center
-              span.review-stars.text-center
-                span.glyphicon.glyphicon-star
-                |                                     
-                span.glyphicon.glyphicon-star
-                |                                     
-                span.glyphicon.glyphicon-star
-                |                                     
-                span.glyphicon.glyphicon-star
-                |                                     
-                span.glyphicon.glyphicon-star
-            |                             
-            .col-xs-12.col-sm-4.vertical-center
-              p.text-center Autor: Lukasz Maciejewski
-            |                             
-            .col-xs-12.col-sm-4.vertical-center
-              p.text-center Data: 02.01.2016
-          |                         
-          .col-xs-12
-            p.text-center
-              | Przelew zostal zrealizowany expresowo, Pieniadze byly na koncie nastepnego dnia. Super polecam.
+        each review in companyReview                         
+          .row.review-details
+              .col-xs-12.col-sm-4.vertical-center
+                span.review-stars.text-center
+                  +outputRating(review.rating)                          
+              .col-xs-12.col-sm-4.vertical-center
+                p.text-center Autor: #{review.author}
+              .col-xs-12.col-sm-4.vertical-center
+                p.text-center Data: #{review.date}
+            .col-xs-12
+              p.text-center= review.reviewText
+                            |                             

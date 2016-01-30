@@ -25,7 +25,7 @@ module.exports.homelist = function (req, res) {
 					imgSrc: '/images/transferwise.jpg',
 					imgAlt: 'TransferWise Logo',
 					currencyRate: '5,8989 PLN',
-					nofee: 'brak',
+					fee: 'brak',
 					amount: '5865,90 PLN',
 					loss: 'brak',
 					realRate: '5,8659 PLN',
@@ -115,10 +115,60 @@ module.exports.homelist = function (req, res) {
 
 // GET 'company info' page
 module.exports.companyInfo = function (req,res) {
-	res.render('company-info', {title: 'Company info'});
+	res.render('company-info', 
+	{
+		title: 'Company info',
+
+		pageHeader: {
+			companyName: 'TransferGo',
+			websiteAddress: 'www.transfergo.com',
+			imgSrc: '/images/transfergo.jpg'
+		},
+
+		companyDetails: {
+			incorporatedDate: '18.01.2012',
+			manager: 'Daumantas Dvilinskas',
+			role: 'Co-Founder and CEO',
+			activity: 'Finanse',
+			sector: 'Banki',
+			type: 'Prywatna',
+			address: 'One Canada Square Level 49, Canary Wharf, London E14 5AB, United Kingdom',
+			coords: 
+			{
+				latitude: 51.5048458,
+				longitude: -0.0218651
+			},
+			formAddress: '/company/review/new',
+		},
+
+		companyReview: [
+		{
+			author: 'Lukasz Maciejewski',
+			reviewText: 'Przelew zostal zrealizowany expresowo, Pieniadze byly na koncie nastepnego dnia. Super polecam.',
+			date: '06.01.2016',
+			rating: 3
+		},
+		{
+			author: 'Bogdan Smolen',
+			reviewText: 'Slaba obsluga przelew dotarl po 5 dniach',
+			date: '12.01.2016',
+			rating: 1
+		},
+		{
+			author: 'Leszek Foka',
+			reviewText: 'Super super nie ma lepszej firmy.',
+			date: '21.01.2016',
+			rating: 5
+		}
+		]
+	});
 };
 
 // GET 'addReview' page
 module.exports.addReview = function (req,res) {
-	res.render('company-review-form', {title: 'Add Review'});
+	res.render('company-review-form', {
+		title: 'Dodaj opinie o firmie',
+		pageHeader: {title: 'TransferGo'},
+		user: {displayName: 'Lukasz Maciejewski'}
+	});
 };
