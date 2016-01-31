@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 
-var dbURI = 'mongodb://localhost/przelewdokraju';
+var dbURI = 'mongodb://localhost/transferCompare';
+if(process.env.NODE_ENV==='production'){
+	dbURI=process.env.MONGOLAB_URI;
+}
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function(){

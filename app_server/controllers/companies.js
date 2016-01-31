@@ -118,7 +118,7 @@ module.exports.companyInfo = function (req,res) {
 	res.render('company-info', 
 	{
 		title: 'Company info',
-
+		id: ObjectId(),
 		pageHeader: {
 			companyName: 'TransferGo',
 			websiteAddress: 'www.transfergo.com',
@@ -138,14 +138,15 @@ module.exports.companyInfo = function (req,res) {
 				latitude: 51.5048458,
 				longitude: -0.0218651
 			},
-			formAddress: '/company/review/new',
+			formAddress: '/company/review/new'
 		},
 
 		companyReview: [
 		{
 			author: 'Lukasz Maciejewski',
+			id: ObjectId(),
 			reviewText: 'Przelew zostal zrealizowany expresowo, Pieniadze byly na koncie nastepnego dnia. Super polecam.',
-			date: '06.01.2016',
+			date: new Date('June 01 2015'),
 			rating: 3
 		},
 		{
