@@ -9,6 +9,8 @@ require('./app_api/models/db');
 var routes = require('./app_server/routes/index');
 var routesApi = require('./app_api/routes/index');
 var users = require('./app_server/routes/users');
+var Companies = require('./app_api/models/companies');
+var User = require('./app_api/models/user');
 
 var app = express();
 
@@ -19,8 +21,8 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
