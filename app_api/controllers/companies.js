@@ -2,6 +2,7 @@
 
 var mongoose = require('mongoose');
 var Company = mongoose.model('Companies');
+var CompanyOffer = mongoose.model('CompaniesOffer');
 
 //placeholder function
 var sendJsonResponse = function(res, status, content){
@@ -15,7 +16,7 @@ String.prototype.toObjectId = function() {
 };
 
 //controllers for companies API
-module.exports.companiesListByRate = function(req,res){
+module.exports.companiesOfferList = function(req,res){
 	if(req.params){
 		Company
 		.find(req.params)
@@ -41,41 +42,25 @@ module.exports.companiesListByRate = function(req,res){
 module.exports.companiesCreate = function(req,res){
 	Company
 		.create({
-				title: req.body.title,
-				pageHeader: {
-					title: req.body.title,
-					subtitle: req.body.subtitle
-				},
-				rankingHeader: {
-					title: req.body.title,
-					description: req.body.description,
-					companyName: req.body.companyName,
-					currencyRate: req.body.currencyRate,
-					fee: req.body.fee,
-					amount: req.body.amount,
-					loss: req.body.loss,
-					realRate: req.body.realRate,
-					update: req.body.update,
-					rating: req.body.rating
-				}
-				// companyName: req.body.companyName,
-				// websiteAddress: req.body.websiteAddress,
-				// imgSrc: req.body.imgSrc,
-				// incorporatedDate: req.body.incorporatedDate,
-				// manager: req.body.manager,
-				// role: req.body.role,
-				// activity: req.body.activity,
-				// sector: req.body.sector,
-				// typeCompany: req.body.typeCompany,
-				// address: req.body.address,
-				// coords: [parseFloat(req.body.latitude), parseFloat(req.body.longitude)],
-				// formAddress: req.body.formAddress
+			mainTitle: req.body.mainTitle,
+			pageHeaderTitle: req.body.pageHeaderTitle,
+			pageHeaderSubtitle: req.body.pageHeaderSubtitle,
+			rankHeadTitle: req.body.rankHeadTitle,
+			rankHeadDesc: req.body.rankHeadDesc,
+			rankHeadCompName: req.body.rankHeadCompName,
+			rankHeadCurrRate: req.body.rankHeadCurrRate,
+			rankHeadFee: req.body.rankHeadFee,
+			rankHeadAmount: req.body.rankHeadAmount,
+			rankHeadLoss: req.body.rankHeadLoss,
+			rankHeadRealRate: req.body.rankHeadRealRate,
+			rankHeadUpdate: req.body.rankHeadUpdate,
+			rankHeadRating: req.body.rankHeadRating
 		}, function(err, company){
 			if(err){
-				sendJsonResponse(res, 400, {"message": "Ups, something goes wrong!"});
+				sendJsonResponse(res, 400, {"message": "Ups, something gone wrong!"});
 				return;
 			} else {
-				sendJsonResponse(res, 201, company);
+				sendJsonResponse(res, 200, company);
 			}
 		});
 };
@@ -100,13 +85,159 @@ module.exports.companiesReadOne = function(req,res){
 };
 
 module.exports.companiesUpdateOne = function(req,res){
+	if(!req.params.companyid){
+		sendJsonResponse(res, 404, {"message": "Not found, companyid is required"});
+		return;
+	}
+	Company
+		.findById(req.params.companyid)
+		.exec(function(err, company){
+			if(!company){
+				sendJsonResponse(res, 404, {"message": "Company id not found"});
+				return;
+			} else if(err) {
+				sendJsonResponse(res, 400, err);
+				return;
+			}
 
+				company.mainTitle = req.body.mainTitle;
+				company.pageHeaderTitle = req.body.pageHeaderTitle;
+				company.pageHeaderSubtitle = req.body.pageHeaderSubtitle;
+				company.rankHeadTitle = req.body.rankHeadTitle;
+				company.rankHeadDesc = req.body.rankHeadDesc;
+				company.rankHeadCompName = req.body.rankHeadCompName;
+				company.rankHeadCurrRate = req.body.rankHeadCurrRate;
+				company.rankHeadFee = req.body.rankHeadFee;
+				company.rankHeadAmount = req.body.rankHeadAmount;
+				company.rankHeadLoss = req.body.rankHeadLoss;
+				company.rankHeadRealRate = req.body.rankHeadRealRate;
+				company.rankHeadUpdate = req.body.rankHeadUpdate;
+				company.rankHeadRating = req.body.rankHeadRating;
+
+			company.save(function(err, company){
+				if(err){
+					sendJsonResponse(res, 400, err);
+				} else {
+					sendJsonResponse(res, 200, company);
+				}
+			});
+		});
 };
 
 module.exports.companiesDeleteOne = function(req,res){
-	Company
-	.findById(req.params.companyid)
-	.exec(function(err,company){
-		sendJsonResponse(res, 200, company);
+	var companyid = req.params.companyid;
+	if(companyid){
+		Company
+			.findByIdAndRemove(companyid)
+			.exec(function(err,company){
+				if(err){
+					sendJsonResponse(res, 404, err);
+					return;
+				} else {
+					sendJsonResponse(res, 204, null);
+				}
+			});
+	} else {
+		sendJsonResponse(res, 404, {"message": "No companyid"});
+	}
+};
+
+// Offers
+
+module.exports.companyOfferCreate = function(req,res){
+	CompanyOffer
+		.create({
+			companyName: req.body.companyName,
+			imgSrc: req.body.imgSrc,
+			imgAlt: req.body.imgAlt,
+			currencyRate: req.body.currencyRate,
+			fee: req.body.fee,
+			amount: req.body.amount,
+			loss: req.body.loss,
+			realRate: req.body.realRate,
+			update: req.body.update,
+			rating: req.body.rating,
+			createdOn: req.body.createdOn,
+			modifiedOn: req.body.modifiedOn
+			}, function(err, company){
+				if(err){
+					sendJsonResponse(res, 400, {"message": "Ups, something gone wrong!"});
+					return;
+				} else {
+					sendJsonResponse(res, 200, company);
+				}
+		});
+};
+
+module.exports.companyOfferReadOne = function(req,res){
+	if(req.params && req.params.offerid){
+		CompanyOffer
+		.findById(req.params.offerid)
+		.exec(function(err,offer){
+			if (!offer){
+				sendJsonResponse(res, 404, {"message": "Sorry We can not find this company offer ID"});
+				return;
+			} else if (err){
+				sendJsonResponse(res, 400, err);
+				return;
+			}
+			sendJsonResponse(res, 200, offer);
+		});
+		} else {
+			sendJsonResponse(res, 404, {"message": "No company offer id in the request"});
+	}
+};
+
+module.exports.companyOfferUpdateOne = function(req,res){
+	if(!req.params.offerid){
+		sendJsonResponse(res, 404, {"message": "Offer id not found"});
+		return;
+	}
+	CompanyOffer
+		.findById(req.params.offerid)
+		.exec(function(err, offer){
+			if(!offer){
+				sendJsonResponse(res, 404, {"message": "Offer id not found"});
+				return;
+			} else if(err){
+				sendJsonResponse(res, 400, err);
+				return;
+			}
+
+				offer.companyName = req.body.companyName;
+				offer.imgSrc = req.body.imgSrc;
+				offer.imgAlt = req.body.imgAlt;
+				offer.currencyRate = req.body.currencyRate;
+				offer.fee = req.body.fee;
+				offer.amount = req.body.amount;
+				offer.loss = req.body.loss;
+				offer.realRate = req.body.realRate;
+				offer.update = req.body.update;
+				offer.rating = req.body.rating;
+
+			offer.save(function(err,offer){
+				if(err){
+					sendJsonResponse(res, 400, err);
+				} else {
+					sendJsonResponse(res, 200, offer);
+				}
+			});
 	});
+};
+
+module.exports.companyOfferDeleteOne = function(req,res){
+	var offerid = req.params.offerid;
+	if(offerid){
+		CompanyOffer
+		.findByIdAndRemove(offerid)
+		.exec(function(err, offer){
+			if(err){
+				sendJsonResponse(res, 400, err);
+			} else {
+				sendJsonResponse(res, 200, offer);
+			}
+		});
+	} else {
+		sendJsonResponse(res, 404, {"message": "Offer id not found"});
+	}
 };

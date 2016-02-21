@@ -48,4 +48,4 @@ process.on('SIGTERM', function(){
 });
 
 require('./companies');
-require('./user');
+require('./users');

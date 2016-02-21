@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var User = mongoose.model('User');
+var User = mongoose.model('Users');
 
 var sendJsonResponse = function(res, status, content){
 	res.status(status);
@@ -12,15 +12,27 @@ String.prototype.toObjectId = function() {
 };
 
 module.exports.userReadAll = function(req,res){
-
-
-	
+	if(req.params){
+		User
+			.find(req.params)
+			.exec(function(err,user){
+				if(!user){
+					sendJsonResponse(res, 404, {"message": "URL not found!"});
+					return;
+				} else if(err) {
+					sendJsonResponse(res, 404, err);
+					return;
+				}
+				sendJsonResponse(res, 200, user);
+			});
+	} else {
+		sendJsonResponse(res, 404, {"message": "No location in request"});
+	}
 };
 
 module.exports.userCreate = function(req,res){
-
-	User.
-		create({
+	User
+		.create({
 			userName: req.body.userName
 		}, function(err, user){
 			if(err){
@@ -29,7 +41,6 @@ module.exports.userCreate = function(req,res){
 				sendJsonResponse(res, 201, user);
 			}
 		});
-
 };
 
 module.exports.userReadOne = function(req,res){};

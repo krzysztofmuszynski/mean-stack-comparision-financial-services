@@ -8,9 +8,9 @@ require('./app_api/models/db');
 
 var routes = require('./app_server/routes/index');
 var routesApi = require('./app_api/routes/index');
-var users = require('./app_server/routes/users');
+// var users = require('./app_server/routes/users');
 var Companies = require('./app_api/models/companies');
-var User = require('./app_api/models/user');
+var Users = require('./app_api/models/users');
 
 var app = express();
 
@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/api', routesApi);
-app.use('/users', users);
+// app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
