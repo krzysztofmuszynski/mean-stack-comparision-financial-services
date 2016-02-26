@@ -37,7 +37,7 @@ block content
                   .rate.col-xs-6
                     p.pull-right.usdgbp 0.68
                   |        
-    #mine-wrapper
+    #mine-wrapper(ng-controller='companyListCtrl')
       .container
         .row
           .col-xs-3
@@ -126,524 +126,365 @@ block content
               .compare-title.col-xs-2
                 p= rankingHeader.rating
         |                 
-        #rank-01.container.ranking-header
+        #rank-01.container.ranking-header(ng-repeat='company in data.companies')
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-2
-                img.maxwidth(src= transfer01.imgSrc alt= transfer01.imgAlt)
+                img.maxwidth(ng-src="{{company.imgSrc}}" ng-alt="{{company.imgAlt}}")
               |                             
               .compare-elem.col-xs-2
-                p= transfer01.currencyRate
+                p{{company.currencyRate}}
               |                             
               .compare-elem.col-xs-1
-                p= transfer01.fee
+                p{{company.fee}}
               |                             
               .compare-elem.col-xs-2
-                p= transfer01.amount
+                p{{company.amount}}
               |                             
               .compare-elem.col-xs-1
-                p= transfer01.loss
+                p{{company.loss}}
               |                             
               .compare-elem.col-xs-1
-                p= transfer01.realRate
+                p{{company.realRate}}
               |                             
               .compare-elem.col-xs-1
-                p= transfer01.update
-              |                             
-              .compare-elem.col-xs-2
-                +outputRating(transfer01.rating)
-        #rank-02.container.ranking-header
-          row
-            .col-xs-12.compare-group
-              .compare-elem.company-name.col-xs-2
-                img.maxwidth(src= transfer02.imgSrc alt= transfer02.imgAlt)
-              |                             
-              .compare-elem.col-xs-2
-                p= transfer02.currencyRate
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer02.fee
-              |                             
-              .compare-elem.col-xs-2
-                p= transfer02.amount
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer02.loss
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer02.realRate
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer02.update
-              |                             
-              .compare-elem.col-xs-2
-                +outputRating(transfer02.rating)
-        #rank-03.container.ranking-header
-          row
-            .col-xs-12.compare-group
-              .compare-elem.company-name.col-xs-2
-                img.maxwidth(src= transfer03.imgSrc alt= transfer03.imgAlt)
-              |                             
-              .compare-elem.col-xs-2
-                p= transfer03.currencyRate
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer03.fee
-              |                             
-              .compare-elem.col-xs-2
-                p= transfer03.amount
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer03.loss
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer03.realRate
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer03.update
-              |                             
-              .compare-elem.col-xs-2
-                +outputRating(transfer03.rating)
-        #rank-04.container.ranking-header
-          row
-            .col-xs-12.compare-group
-              .compare-elem.company-name.col-xs-2
-                img.maxwidth(src= transfer04.imgSrc alt= transfer04.imgAlt)
-              |                             
-              .compare-elem.col-xs-2
-                p= transfer04.currencyRate
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer04.fee
-              |                             
-              .compare-elem.col-xs-2
-                p= transfer04.amount
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer04.loss
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer04.realRate
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer04.update
-              |                             
-              .compare-elem.col-xs-2
-                +outputRating(transfer04.rating)
-        #rank-05.container.ranking-header
-          row
-            .col-xs-12.compare-group
-              .compare-elem.company-name.col-xs-2
-                img.maxwidth(src= transfer05.imgSrc alt= transfer05.imgAlt)
-              |                             
-              .compare-elem.col-xs-2
-                p= transfer05.currencyRate
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer05.fee
-              |                             
-              .compare-elem.col-xs-2
-                p= transfer05.amount
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer05.loss
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer05.realRate
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer05.update
-              |                             
-              .compare-elem.col-xs-2
-                +outputRating(transfer05.rating)
-        #rank-06.container.ranking-header
-          row
-            .col-xs-12.compare-group
-              .compare-elem.company-name.col-xs-2
-                img.maxwidth(src= transfer06.imgSrc alt= transfer06.imgAlt)
-              |                             
-              .compare-elem.col-xs-2
-                p= transfer06.currencyRate
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer06.fee
-              |                             
-              .compare-elem.col-xs-2
-                p= transfer06.amount
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer06.loss
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer06.realRate
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer06.update
-              |                             
-              .compare-elem.col-xs-2
-                +outputRating(transfer06.rating)
-        #rank-07.container.ranking-header
-          row
-            .col-xs-12.compare-group
-              .compare-elem.company-name.col-xs-2
-                img.maxwidth(src= transfer07.imgSrc alt= transfer07.imgAlt)
-              |                             
-              .compare-elem.col-xs-2
-                p= transfer07.currencyRate
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer07.fee
-              |                             
-              .compare-elem.col-xs-2
-                p= transfer07.amount
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer07.loss
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer07.realRate
-              |                             
-              .compare-elem.col-xs-1
-                p= transfer07.update
-              |                             
-              .compare-elem.col-xs-2
-                +outputRating(transfer07.rating)
+                p{{company.update}}
+              
       // End wide screen
+
       #small-screen
-        #rank-01.container.ranking-header
+        #rank-01.container.ranking-header(ng-repeat='company in data.companies')
           row
             .col-xs-12.compare-group
               .compare-elem.company-name.col-xs-12
-                img(src= transfer01.imgSrc, alt= transfer01.imgAlt)
+                img(src="{{company.imgSrc}}", alt="{{company.imgAlt}}")
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kurs wymiany
               .compare-elem.col-xs-6
-                p.pull-right= transfer01.currencyRate
+                p.pull-right{{company.currencyRate}}
               |                             
               .compare-title.col-xs-6
                 p.pull-left Oplata
               .compare-elem.col-xs-6
-                p.pull-right= transfer01.fee
+                p.pull-right{{company.fee}}
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kwota za 1000
               .compare-elem.col-xs-6
-                p.pull-right= transfer01.amount
+                p.pull-right{{company.amount}}
               |                             
               .compare-title.col-xs-6
                 p.pull-left Strata
               .compare-elem.col-xs-6
-                p.pull-right= transfer01.loss
+                p.pull-right{{company.loss}}
               |                             
               .compare-title.col-xs-6
                 p.pull-left Rzecz. kurs
               .compare-elem.col-xs-6
-                p.pull-right= transfer01.realRate
+                p.pull-right{{company.realRate}}
               |                             
               .compare-title.col-xs-6
                 p.pull-left Aktualizacja
               .compare-elem.col-xs-6
-                p.pull-right= transfer01.update
+                p.pull-right{{company.update}}
               |                             
               .compare-title.col-xs-6
                 p.pull-left Opinie klient wg. Trustpilot
-              |                             
-              .compare-elem.col-xs-6
-                +outputRating(transfer01.rating)
-        #rank-02.container.ranking-header
-          row
-            .col-xs-12.compare-group
-              .compare-elem.company-name.col-xs-12
-                img(src= transfer02.imgSrc, alt= transfer02.imgAlt)
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Kurs wymiany
-              .compare-elem.col-xs-6
-                p.pull-right= transfer02.currencyRate
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Oplata
-              .compare-elem.col-xs-6
-                p.pull-right= transfer02.fee
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Kwota za 1000
-              .compare-elem.col-xs-6
-                p.pull-right= transfer02.amount
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Strata
-              .compare-elem.col-xs-6
-                p.pull-right= transfer02.loss
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Rzecz. kurs
-              .compare-elem.col-xs-6
-                p.pull-right= transfer02.realRate
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Aktualizacja
-              .compare-elem.col-xs-6
-                p.pull-right= transfer02.update
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Opinie klient wg. Trustpilot
-              |                             
-              .compare-elem.col-xs-6
-                +outputRating(transfer02.rating)
-        #rank-03.container.ranking-header
-          row
-            .col-xs-12.compare-group
-              .compare-elem.company-name.col-xs-12
-                img(src= transfer03.imgSrc, alt= transfer03.imgAlt)
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Kurs wymiany
-              .compare-elem.col-xs-6
-                p.pull-right= transfer03.currencyRate
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Oplata
-              .compare-elem.col-xs-6
-                p.pull-right= transfer03.fee
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Kwota za 1000
-              .compare-elem.col-xs-6
-                p.pull-right= transfer03.amount
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Strata
-              .compare-elem.col-xs-6
-                p.pull-right= transfer03.loss
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Rzecz. kurs
-              .compare-elem.col-xs-6
-                p.pull-right= transfer03.realRate
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Aktualizacja
-              .compare-elem.col-xs-6
-                p.pull-right= transfer03.update
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Opinie klient wg. Trustpilot
-              |                             
-              .compare-elem.col-xs-6
-                +outputRating(transfer03.rating)
-        #rank-04.container.ranking-header
-          row
-            .col-xs-12.compare-group
-              .compare-elem.company-name.col-xs-12
-                img(src= transfer04.imgSrc, alt= transfer04.imgAlt)
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Kurs wymiany
-              .compare-elem.col-xs-6
-                p.pull-right= transfer04.currencyRate
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Oplata
-              .compare-elem.col-xs-6
-                p.pull-right= transfer04.fee
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Kwota za 1000
-              .compare-elem.col-xs-6
-                p.pull-right= transfer04.amount
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Strata
-              .compare-elem.col-xs-6
-                p.pull-right= transfer04.loss
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Rzecz. kurs
-              .compare-elem.col-xs-6
-                p.pull-right= transfer04.realRate
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Aktualizacja
-              .compare-elem.col-xs-6
-                p.pull-right= transfer04.update
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Opinie klient wg. Trustpilot
-              |                             
-              .compare-elem.col-xs-6
-                +outputRating(transfer04.rating)
-        #rank-05.container.ranking-header
-          row
-            .col-xs-12.compare-group
-              .compare-elem.company-name.col-xs-12
-                img(src= transfer05.imgSrc, alt= transfer05.imgAlt)
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Kurs wymiany
-              .compare-elem.col-xs-6
-                p.pull-right= transfer05.currencyRate
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Oplata
-              .compare-elem.col-xs-6
-                p.pull-right= transfer05.fee
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Kwota za 1000
-              .compare-elem.col-xs-6
-                p.pull-right= transfer05.amount
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Strata
-              .compare-elem.col-xs-6
-                p.pull-right= transfer05.loss
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Rzecz. kurs
-              .compare-elem.col-xs-6
-                p.pull-right= transfer05.realRate
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Aktualizacja
-              .compare-elem.col-xs-6
-                p.pull-right= transfer05.update
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Opinie klient wg. Trustpilot
-              |                             
-              .compare-elem.col-xs-6
-                +outputRating(transfer05.rating)
-        #rank-06.container.ranking-header
-          row
-            .col-xs-12.compare-group
-              .compare-elem.company-name.col-xs-12
-                img(src= transfer06.imgSrc, alt= transfer06.imgAlt)
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Kurs wymiany
-              .compare-elem.col-xs-6
-                p.pull-right= transfer06.currencyRate
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Oplata
-              .compare-elem.col-xs-6
-                p.pull-right= transfer06.fee
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Kwota za 1000
-              .compare-elem.col-xs-6
-                p.pull-right= transfer06.amount
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Strata
-              .compare-elem.col-xs-6
-                p.pull-right= transfer06.loss
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Rzecz. kurs
-              .compare-elem.col-xs-6
-                p.pull-right= transfer06.realRate
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Aktualizacja
-              .compare-elem.col-xs-6
-                p.pull-right= transfer06.update
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Opinie klient wg. Trustpilot
-              |                             
-              .compare-elem.col-xs-6
-                +outputRating(transfer06.rating)
-        #rank-07.container.ranking-header
-          row
-            .col-xs-12.compare-group
-              .compare-elem.company-name.col-xs-12
-                img(src= transfer07.imgSrc, alt= transfer07.imgAlt)
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Kurs wymiany
-              .compare-elem.col-xs-6
-                p.pull-right= transfer07.currencyRate
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Oplata
-              .compare-elem.col-xs-6
-                p.pull-right= transfer07.fee
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Kwota za 1000
-              .compare-elem.col-xs-6
-                p.pull-right= transfer07.amount
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Strata
-              .compare-elem.col-xs-6
-                p.pull-right= transfer07.loss
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Rzecz. kurs
-              .compare-elem.col-xs-6
-                p.pull-right= transfer07.realRate
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Aktualizacja
-              .compare-elem.col-xs-6
-                p.pull-right= transfer07.update
-              |                             
-              .compare-title.col-xs-6
-                p.pull-left Opinie klient wg. Trustpilot
-              |                             
-              .compare-elem.col-xs-6
-                +outputRating(transfer07.rating)
-      // End small screen
-      .container-fluid.countries-list
-        .container
-          .col-xs-12
-            ul#country-transf
-              li.transf-list
-                p.transf-item Przelewy z Austrii
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z Belgii
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z Danii
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z Finlandii
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z Francji
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z Hiszpanii
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z Holandii
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z Irlandii
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z Niemiec
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z Norwegii
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z Szwajcarii
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z Szwecji
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z USA
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z Wielkiej Brytanii
-              |                             
-              li.transf-list
-                p.transf-item Przelewy z W&lstrok;och
-    // End main sector
+                
+    //-     #rank-02.container.ranking-header
+    //-       row
+    //-         .col-xs-12.compare-group
+    //-           .compare-elem.company-name.col-xs-12
+    //-             img(src= transfer02.imgSrc, alt= transfer02.imgAlt)
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Kurs wymiany
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer02.currencyRate
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Oplata
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer02.fee
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Kwota za 1000
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer02.amount
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Strata
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer02.loss
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Rzecz. kurs
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer02.realRate
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Aktualizacja
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer02.update
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Opinie klient wg. Trustpilot
+    //-           |                             
+    //-           .compare-elem.col-xs-6
+    //-             +outputRating(transfer02.rating)
+    //-     #rank-03.container.ranking-header
+    //-       row
+    //-         .col-xs-12.compare-group
+    //-           .compare-elem.company-name.col-xs-12
+    //-             img(src= transfer03.imgSrc, alt= transfer03.imgAlt)
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Kurs wymiany
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer03.currencyRate
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Oplata
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer03.fee
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Kwota za 1000
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer03.amount
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Strata
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer03.loss
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Rzecz. kurs
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer03.realRate
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Aktualizacja
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer03.update
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Opinie klient wg. Trustpilot
+    //-           |                             
+    //-           .compare-elem.col-xs-6
+    //-             +outputRating(transfer03.rating)
+    //-     #rank-04.container.ranking-header
+    //-       row
+    //-         .col-xs-12.compare-group
+    //-           .compare-elem.company-name.col-xs-12
+    //-             img(src= transfer04.imgSrc, alt= transfer04.imgAlt)
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Kurs wymiany
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer04.currencyRate
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Oplata
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer04.fee
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Kwota za 1000
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer04.amount
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Strata
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer04.loss
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Rzecz. kurs
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer04.realRate
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Aktualizacja
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer04.update
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Opinie klient wg. Trustpilot
+    //-           |                             
+    //-           .compare-elem.col-xs-6
+    //-             +outputRating(transfer04.rating)
+    //-     #rank-05.container.ranking-header
+    //-       row
+    //-         .col-xs-12.compare-group
+    //-           .compare-elem.company-name.col-xs-12
+    //-             img(src= transfer05.imgSrc, alt= transfer05.imgAlt)
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Kurs wymiany
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer05.currencyRate
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Oplata
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer05.fee
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Kwota za 1000
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer05.amount
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Strata
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer05.loss
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Rzecz. kurs
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer05.realRate
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Aktualizacja
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer05.update
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Opinie klient wg. Trustpilot
+    //-           |                             
+    //-           .compare-elem.col-xs-6
+    //-             +outputRating(transfer05.rating)
+    //-     #rank-06.container.ranking-header
+    //-       row
+    //-         .col-xs-12.compare-group
+    //-           .compare-elem.company-name.col-xs-12
+    //-             img(src= transfer06.imgSrc, alt= transfer06.imgAlt)
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Kurs wymiany
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer06.currencyRate
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Oplata
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer06.fee
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Kwota za 1000
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer06.amount
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Strata
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer06.loss
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Rzecz. kurs
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer06.realRate
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Aktualizacja
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer06.update
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Opinie klient wg. Trustpilot
+    //-           |                             
+    //-           .compare-elem.col-xs-6
+    //-             +outputRating(transfer06.rating)
+    //-     #rank-07.container.ranking-header
+    //-       row
+    //-         .col-xs-12.compare-group
+    //-           .compare-elem.company-name.col-xs-12
+    //-             img(src= transfer07.imgSrc, alt= transfer07.imgAlt)
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Kurs wymiany
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer07.currencyRate
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Oplata
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer07.fee
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Kwota za 1000
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer07.amount
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Strata
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer07.loss
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Rzecz. kurs
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer07.realRate
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Aktualizacja
+    //-           .compare-elem.col-xs-6
+    //-             p.pull-right= transfer07.update
+    //-           |                             
+    //-           .compare-title.col-xs-6
+    //-             p.pull-left Opinie klient wg. Trustpilot
+    //-           |                             
+    //-           .compare-elem.col-xs-6
+    //-             +outputRating(transfer07.rating)
+    //-   // End small screen
+    //-   .container-fluid.countries-list
+    //-     .container
+    //-       .col-xs-12
+    //-         ul#country-transf
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Austrii
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Belgii
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Danii
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Finlandii
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Francji
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Hiszpanii
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Holandii
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Irlandii
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Niemiec
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Norwegii
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Szwajcarii
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Szwecji
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z USA
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z Wielkiej Brytanii
+    //-           |                             
+    //-           li.transf-list
+    //-             p.transf-item Przelewy z W&lstrok;och
+    //- // End main sector

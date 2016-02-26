@@ -46,19 +46,37 @@ var companiesOfferSchema = new Schema({
 
 var companiesSchema = new Schema({
 
-	mainTitle: String,
-	pageHeaderTitle: String,
-	pageHeaderSubtitle: String,
-	rankHeadTitle: String,
-	rankHeadDesc: String,
-	rankHeadCompName: String,
-	rankHeadCurrRate: String,
-	rankHeadFee: String,
-	rankHeadAmount: String,
-	rankHeadLoss: String,
-	rankHeadRealRate: String,
-	rankHeadUpdate: String,
-	rankHeadRating: String
+	title: String,
+	pageHeader: {
+		title: String,
+		subtitle: String
+	},
+	rankingHeader: {
+		title: String,
+		description: String,
+		companyName: String,
+		currencyRate: String,
+		fee: String,
+		amount: String,
+		loss: String,
+		realRate: String,
+		update: {type: Date, default: Date.now},
+		rating: String
+	}
+
+	// mainTitle: String,
+	// pageHeaderTitle: String,
+	// pageHeaderSubtitle: String,
+	// rankHeadTitle: String,
+	// rankHeadDesc: String,
+	// rankHeadCompName: String,
+	// rankHeadCurrRate: String,
+	// rankHeadFee: String,
+	// rankHeadAmount: String,
+	// rankHeadLoss: String,
+	// rankHeadRealRate: String,
+	// rankHeadUpdate: String,
+	// rankHeadRating: String
 
 	// companyInfo: [companyInfoSchema],
 
