@@ -1,28 +1,28 @@
-var request = require('request');
+// var request = require('request');
 
-var apiOptions = {
-	server: "http://localhost:3000"
-};
+// var apiOptions = {
+// 	server: "http://localhost:3000"
+// };
 
-if(process.env.NODE_ENV==='production'){
-	apiOptions.server="";
-}
+// if(process.env.NODE_ENV==='production'){
+// 	apiOptions.server="";
+// }
 
-var renderHomepage = function(req,res,responseBody){
-	var message;
-  if (!(responseBody instanceof Array)) {
-    message = "API lookup error";
-    responseBody = [];
-  } else {
-    if (!responseBody.length) {
-      message = "No places found nearby";
-    }
-  }
-	res.render('companies-list', {
-		companies: responseBody,
-		message: message
-	});
-}
+// var renderHomepage = function(req,res,responseBody){
+// 	var message;
+//   if (!(responseBody instanceof Array)) {
+//     message = "API lookup error";
+//     responseBody = [];
+//   } else {
+//     if (!responseBody.length) {
+//       message = "No places found nearby";
+//     }
+//   }
+// 	res.render('companies-list', {
+// 		companies: responseBody,
+// 		message: message
+// 	});
+// }
 
 // GET 'home' page
 module.exports.homelist = function (req, res) {

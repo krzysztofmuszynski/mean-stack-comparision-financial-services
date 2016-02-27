@@ -133,23 +133,25 @@ block content
                 img.maxwidth(ng-src="{{company.imgSrc}}" ng-alt="{{company.imgAlt}}")
               |                             
               .compare-elem.col-xs-2
-                p{{company.currencyRate}}
+                p {{company.currencyRate}}
               |                             
               .compare-elem.col-xs-1
-                p{{company.fee}}
+                p {{company.fee}}
               |                             
               .compare-elem.col-xs-2
-                p{{company.amount}}
+                p {{company.amount}}
               |                             
               .compare-elem.col-xs-1
-                p{{company.loss}}
+                p {{company.loss}}
               |                             
               .compare-elem.col-xs-1
-                p{{company.realRate}}
+                p {{company.realRate}}
               |                             
               .compare-elem.col-xs-1
-                p{{company.update}}
-              
+                p {{company.update}}
+              |                             
+              .compare-elem.col-xs-2
+                p(rating-stars, rating='company.rating')
       // End wide screen
 
       #small-screen
@@ -162,32 +164,32 @@ block content
               .compare-title.col-xs-6
                 p.pull-left Kurs wymiany
               .compare-elem.col-xs-6
-                p.pull-right{{company.currencyRate}}
+                p.pull-right {{company.currencyRate}}
               |                             
               .compare-title.col-xs-6
                 p.pull-left Oplata
               .compare-elem.col-xs-6
-                p.pull-right{{company.fee}}
+                p.pull-right {{company.fee}}
               |                             
               .compare-title.col-xs-6
                 p.pull-left Kwota za 1000
               .compare-elem.col-xs-6
-                p.pull-right{{company.amount}}
+                p.pull-right {{company.amount}}
               |                             
               .compare-title.col-xs-6
                 p.pull-left Strata
               .compare-elem.col-xs-6
-                p.pull-right{{company.loss}}
+                p.pull-right {{company.loss}}
               |                             
               .compare-title.col-xs-6
                 p.pull-left Rzecz. kurs
               .compare-elem.col-xs-6
-                p.pull-right{{company.realRate}}
+                p.pull-right {{company.realRate}}
               |                             
               .compare-title.col-xs-6
                 p.pull-left Aktualizacja
               .compare-elem.col-xs-6
-                p.pull-right{{company.update}}
+                p.pull-right {{company.update}}
               |                             
               .compare-title.col-xs-6
                 p.pull-left Opinie klient wg. Trustpilot
