@@ -10,6 +10,7 @@ var routes = require('./app_server/routes/index');
 var routesApi = require('./app_api/routes/index');
 // var users = require('./app_server/routes/users');
 var Companies = require('./app_api/models/companies');
+var CompaniesOffer = require('./app_api/models/companiesCompare');
 var Users = require('./app_api/models/users');
 
 var app = express();
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app_client')));
 
 app.use('/', routes);
 app.use('/api', routesApi);

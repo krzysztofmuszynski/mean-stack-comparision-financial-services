@@ -3,6 +3,8 @@ var router = express.Router();
 
 var ctrlCompanies = require('../controllers/companies');
 
+var ctrlCompaniesCompare = require('../controllers/companiesCompare');
+
 var ctrlReviews = require('../controllers/reviews');
 
 var ctrlUser = require('../controllers/users');
@@ -16,11 +18,11 @@ router.put('/companies/:companyid', ctrlCompanies.companiesUpdateOne);
 router.delete('/companies/:companyid', ctrlCompanies.companiesDeleteOne);
 
 // add offer
-
-router.post('/companies/offers', ctrlCompanies.companyOfferCreate);
-router.get('/companies/offers/:offerid', ctrlCompanies.companyOfferReadOne);
-router.put('/companies/offers/:offerid', ctrlCompanies.companyOfferUpdateOne);
-router.delete('/companies/offers/:offerid', ctrlCompanies.companyOfferDeleteOne);
+router.get('/compare', ctrlCompaniesCompare.offerReadAll);
+router.post('/compare', ctrlCompaniesCompare.offerCreateOne);
+router.get('/compare/:offerid', ctrlCompaniesCompare.offerReadOne);
+router.put('/compare/:offerid', ctrlCompaniesCompare.offerUpdateOne);
+router.delete('/compare/:offerid', ctrlCompaniesCompare.offerDeleteOne);
 
 // reviews
 

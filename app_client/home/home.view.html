@@ -1,0 +1,174 @@
+        <div id="mine-wrapper" ng-controller='homeCtrl'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <p class="select-country">Wybierz kraj:</p>
+                    </div>
+                    <div class="col-xs-9">
+                        <ul class="countries">
+                            <li class="country">
+                                <p>Austria</p>
+                            </li>
+                            <li class="country">
+                                <p>Belgia</p>
+                            </li>
+                            <li class="country">
+                                <p>Dania</p>
+                            </li>
+                            <li class="country">
+                                <p>Finlandia</p>
+                            </li>
+                            <li class="country">
+                                <p>Francja</p>
+                            </li>
+                            <li class="country">
+                                <p>Hiszpania</p>
+                            </li>
+                            <li class="country">
+                                <p>Holandia</p>
+                            </li>
+                            <li class="country">
+                                <p>Irlandia</p>
+                            </li>
+                            <li class="country">
+                                <p>Niemcy</p>
+                            </li>
+                            <li class="country">
+                                <p>Norwegia</p>
+                            </li>
+                            <li class="country">
+                                <p>Szwacjaria</p>
+                            </li>
+                            <li class="country">
+                                <p>Szwecja</p>
+                            </li>
+                            <li class="country">
+                                <p>USA</p>
+                            </li>
+                            <li class="country">
+                                <p>Wielka Brytania</p>
+                            </li>
+                            <li class="country">
+                                <p>Wlochy</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container line"></div>
+            <div class="container">
+                <h2 class="ranking">Ranking przelewow zagranicznych z Wielkiej Brytanii do Polski</h2></div>
+            <div id="wide-screen">
+                <div class="container ranking-header">
+                    <row>
+                        <div class="col-xs-12 compare-desc">
+                            <p>Aktualne porownanie: kwota przelewu 1000 funtow</p>
+                        </div>
+                        <div class="col-xs-12 compare-group">
+                            <div class="compare-title col-xs-2">
+                                <p>Nazwa firmy</p>
+                            </div>
+                            <div class="compare-title col-xs-2">
+                                <p>Kurs wymiany</p>
+                            </div>
+                            <div class="compare-title col-xs-1">
+                                <p>Oplata</p>
+                            </div>
+                            <div class="compare-title col-xs-2">
+                                <p>Kwota za 1000</p>
+                            </div>
+                            <div class="compare-title col-xs-1">
+                                <p>Strata</p>
+                            </div>
+                            <div class="compare-title col-xs-1">
+                                <p>Rzecz. kurs</p>
+                            </div>
+                            <div class="compare-title col-xs-1">
+                                <p>Aktualizacja</p>
+                            </div>
+                            <div class="compare-title col-xs-2">
+                                <p>Opinie klient wg. Trustpilot</p>
+                            </div>
+                        </div>
+                    </row>
+                </div>
+                <div id="rank-01" ng-repeat="company in data.companies" class="container ranking-header">
+                    <row>
+                        <div class="col-xs-12 compare-group">
+                            <div class="compare-elem company-name col-xs-2"><img ng-src="{{company.imgSrc}}" ng-alt="{{company.imgAlt}}" class="maxwidth" /></div>
+                            <div class="compare-elem col-xs-2">
+                                <p>{{company.currencyRate}}</p>
+                            </div>
+                            <div class="compare-elem col-xs-1">
+                                <p>{{company.fee}}</p>
+                            </div>
+                            <div class="compare-elem col-xs-2">
+                                <p>{{company.amount}}</p>
+                            </div>
+                            <div class="compare-elem col-xs-1">
+                                <p>{{company.loss}}</p>
+                            </div>
+                            <div class="compare-elem col-xs-1">
+                                <p>{{company.realRate}}</p>
+                            </div>
+                            <div class="compare-elem col-xs-1">
+                                <p>{{company.update}}</p>
+                            </div>
+                            <div class="compare-elem col-xs-2">
+                                <p rating-stars="rating-stars" rating="company.rating"></p>
+                            </div>
+                        </div>
+                    </row>
+                </div>
+            </div>
+            <!-- End wide screen-->
+            <div id="small-screen">
+                <div id="rank-01" ng-repeat="company in data.companies" class="container ranking-header">
+                    <row>
+                        <div class="col-xs-12 compare-group">
+                            <div class="compare-elem company-name col-xs-12"><img src="{{company.imgSrc}}" alt="{{company.imgAlt}}" /></div>
+                            <div class="compare-title col-xs-6">
+                                <p class="pull-left">Kurs wymiany</p>
+                            </div>
+                            <div class="compare-elem col-xs-6">
+                                <p class="pull-right">{{company.currencyRate}}</p>
+                            </div>
+                            <div class="compare-title col-xs-6">
+                                <p class="pull-left">Oplata</p>
+                            </div>
+                            <div class="compare-elem col-xs-6">
+                                <p class="pull-right">{{company.fee}}</p>
+                            </div>
+                            <div class="compare-title col-xs-6">
+                                <p class="pull-left">Kwota za 1000</p>
+                            </div>
+                            <div class="compare-elem col-xs-6">
+                                <p class="pull-right">{{company.amount}}</p>
+                            </div>
+                            <div class="compare-title col-xs-6">
+                                <p class="pull-left">Strata</p>
+                            </div>
+                            <div class="compare-elem col-xs-6">
+                                <p class="pull-right">{{company.loss}}</p>
+                            </div>
+                            <div class="compare-title col-xs-6">
+                                <p class="pull-left">Rzecz. kurs</p>
+                            </div>
+                            <div class="compare-elem col-xs-6">
+                                <p class="pull-right">{{company.realRate}}</p>
+                            </div>
+                            <div class="compare-title col-xs-6">
+                                <p class="pull-left">Aktualizacja</p>
+                            </div>
+                            <div class="compare-elem col-xs-6">
+                                <p class="pull-right">{{company.update}}</p>
+                            </div>
+                            <div class="compare-title col-xs-6">
+                                <p class="pull-left">Opinie klient wg. Trustpilot</p>
+                            </div>
+                        </div>
+                    </row>
+                </div>
+            </div>
+        </div>
+    </div>

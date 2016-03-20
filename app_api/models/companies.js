@@ -1,23 +1,23 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var companyInfoSchema = new Schema({
+// var companyInfoSchema = new Schema({
 
-		siteTitle: {type: String, required: true},
-		companyName: {type: String, required: true},
-		websiteAddress: {type: String, required: true},
-		imgSrc: {type: String, required: true},
-		incorporatedDate: {type: String, required: true},
-		manager: {type: String, required: true},
-		role: String,
-		activity: String,
-		sector: String,
-		typeCompany: String,
-		address: {type: String, required: true},
-		coords: {type: [Number], index: '2dsphere'},
-		formAddress: {type: String, required: true}
+// 		siteTitle: {type: String, required: true},
+// 		companyName: {type: String, required: true},
+// 		websiteAddress: {type: String, required: true},
+// 		imgSrc: {type: String, required: true},
+// 		incorporatedDate: {type: String, required: true},
+// 		manager: {type: String, required: true},
+// 		role: String,
+// 		activity: String,
+// 		sector: String,
+// 		typeCompany: String,
+// 		address: {type: String, required: true},
+// 		coords: {type: [Number], index: '2dsphere'},
+// 		formAddress: {type: String, required: true}
 
-});
+// });
 
 var companyReviewSchema = new Schema({
 			
@@ -29,20 +29,7 @@ var companyReviewSchema = new Schema({
 
 });
 
-var companiesOfferSchema = new Schema({
-	companyName: String,
-	imgSrc: String,
-	imgAlt: String,
-	currencyRate: String,
-	fee: String,
-	amount: String,
-	loss: String,
-	realRate: String,
-	update: String,
-	rating: {type: Number, 'default': 0, min: 0, max: 5},
-	createdOn: { type: Date, default: Date.now },
-	modifiedOn: Date
-});
+
 
 var companiesSchema = new Schema({
 
@@ -88,4 +75,4 @@ var companiesSchema = new Schema({
 
 mongoose.model('Companies', companiesSchema, 'companies');
 
-mongoose.model('CompaniesOffer', companiesOfferSchema, 'companies');
+// mongoose.model('CompaniesOffer', companiesOfferSchema, 'companies');

@@ -5,14 +5,18 @@ var ctrlOthers = require('../controllers/others');
 
 // GET companies pages.
 
-router.get('/', ctrlCompanies.homelist);
+// router.get('/', ctrlCompanies.homelist);
 
-router.get('/company', ctrlCompanies.companyInfo);
+// router.get('/company', ctrlCompanies.companyInfo);
 
-router.get('/company/review/new', ctrlCompanies.addReview);
+// router.get('/company/review/new', ctrlCompanies.addReview);
 
 // GET other pages.
 
-router.get('/about', ctrlOthers.about);
+// router.get('/about', ctrlOthers.about);
+
+// GET angular view
+
+router.get('/', ctrlOthers.angularApp);
 
 module.exports = router;

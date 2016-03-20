@@ -33,7 +33,13 @@ html(ng-app="companyApp").no-js(lang='')
     |         
     script(src='/angular/angular.js')
     |         
+    script(src='/lib/angular-route.js')
+    |         
     script(src='/angular/transferCompareApp.js')
+    script(src='/app.js')
+    script(src='/common/services/companyData.service.js')
+    script(src='/home/home.controller.js')
+    script(src='/common/directive/ratingStars/ratingStars.directive.js')
   |     
   body
     |         
@@ -54,8 +60,43 @@ html(ng-app="companyApp").no-js(lang='')
               |                             
               li
                 a(href='#') Rejestracja
-    #container-block  
-      block content
+    header
+      #bcg-01.container-fluid
+        .container
+          .row
+            .container-fluid
+              .col-xs-12.col-sm-6
+                h1#slogan-01
+                  | Poniewaz nikt nie lubi przeplacac przygotowalismy zestawienie najtanszych przelewow zagranicznych. Mam nadzieje, ze dzieki temu uda sie Tobie zaoszczedzic spora sume pieniedzy.            
+                h2#slogan-02
+                  | Zestawienie znajdziesz ponizej.
+              |                         
+              .col-xs-12.col-sm-6
+                #rect-01.pull-right
+                  #currency-rate.col-xs-12
+                    p Kursy walut
+                  |                                 
+                  .currency-name.col-xs-6
+                    p.pull-left USD/PLN
+                  |                                 
+                  .rate.col-xs-6
+                    p.pull-right.usdpln 4.01
+                  |                                 
+                  .currency-name.col-xs-6
+                    p.pull-left USD/EUR
+                  |                                 
+                  .rate.col-xs-6
+                    p.pull-right.usdeur 0.91
+                  |                                 
+                  .currency-name.col-xs-6
+                    p.pull-left USD/GBP
+                  |                                 
+                  .rate.col-xs-6
+                    p.pull-right.usdgbp 0.68
+                  |       
+    #container-block
+      div(ng-view)  
+        block content
 
     footer
       #footer.container-fluid

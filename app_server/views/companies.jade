@@ -2,42 +2,8 @@ extends layout
 
 include _includes/sharedHTMLfunctions
 
-block content
-  header
-      #bcg-01.container-fluid
-        .container
-          .row
-            .container-fluid
-              .col-xs-12.col-sm-6
-                h1#slogan-01
-                  = pageHeader.title                             
-                h2#slogan-02
-                  = pageHeader.subtitle
-              |                         
-              .col-xs-12.col-sm-6
-                #rect-01.pull-right
-                  #currency-rate.col-xs-12
-                    p Kursy walut
-                  |                                 
-                  .currency-name.col-xs-6
-                    p.pull-left USD/PLN
-                  |                                 
-                  .rate.col-xs-6
-                    p.pull-right.usdpln 4.01
-                  |                                 
-                  .currency-name.col-xs-6
-                    p.pull-left USD/EUR
-                  |                                 
-                  .rate.col-xs-6
-                    p.pull-right.usdeur 0.91
-                  |                                 
-                  .currency-name.col-xs-6
-                    p.pull-left USD/GBP
-                  |                                 
-                  .rate.col-xs-6
-                    p.pull-right.usdgbp 0.68
-                  |        
-    #mine-wrapper(ng-controller='companyListCtrl')
+block content 
+    #mine-wrapper
       .container
         .row
           .col-xs-3

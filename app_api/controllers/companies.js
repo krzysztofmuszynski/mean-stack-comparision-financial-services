@@ -2,13 +2,12 @@
 
 var mongoose = require('mongoose');
 var Company = mongoose.model('Companies');
-var CompanyOffer = mongoose.model('CompaniesOffer');
 
 //placeholder function
 var sendJsonResponse = function(res, status, content){
 	res.status(status);
 	res.json(content);
-}
+};
 
 String.prototype.toObjectId = function() {
   var ObjectId = (require('mongoose').Types.ObjectId);
@@ -142,102 +141,3 @@ module.exports.companiesDeleteOne = function(req,res){
 	}
 };
 
-// Offers
-
-module.exports.companyOfferCreate = function(req,res){
-	CompanyOffer
-		.create({
-			companyName: req.body.companyName,
-			imgSrc: req.body.imgSrc,
-			imgAlt: req.body.imgAlt,
-			currencyRate: req.body.currencyRate,
-			fee: req.body.fee,
-			amount: req.body.amount,
-			loss: req.body.loss,
-			realRate: req.body.realRate,
-			update: req.body.update,
-			rating: req.body.rating,
-			createdOn: req.body.createdOn,
-			modifiedOn: req.body.modifiedOn
-			}, function(err, company){
-				if(err){
-					sendJsonResponse(res, 400, {"message": "Ups, something gone wrong!"});
-					return;
-				} else {
-					sendJsonResponse(res, 200, company);
-				}
-		});
-};
-
-module.exports.companyOfferReadOne = function(req,res){
-	if(req.params && req.params.offerid){
-		CompanyOffer
-		.findById(req.params.offerid)
-		.exec(function(err,offer){
-			if (!offer){
-				sendJsonResponse(res, 404, {"message": "Sorry We can not find this company offer ID"});
-				return;
-			} else if (err){
-				sendJsonResponse(res, 400, err);
-				return;
-			}
-			sendJsonResponse(res, 200, offer);
-		});
-		} else {
-			sendJsonResponse(res, 404, {"message": "No company offer id in the request"});
-	}
-};
-
-module.exports.companyOfferUpdateOne = function(req,res){
-	if(!req.params.offerid){
-		sendJsonResponse(res, 404, {"message": "Offer id not found"});
-		return;
-	}
-	CompanyOffer
-		.findById(req.params.offerid)
-		.exec(function(err, offer){
-			if(!offer){
-				sendJsonResponse(res, 404, {"message": "Offer id not found"});
-				return;
-			} else if(err){
-				sendJsonResponse(res, 400, err);
-				return;
-			}
-
-				offer.companyName = req.body.companyName;
-				offer.imgSrc = req.body.imgSrc;
-				offer.imgAlt = req.body.imgAlt;
-				offer.currencyRate = req.body.currencyRate;
-				offer.fee = req.body.fee;
-				offer.amount = req.body.amount;
-				offer.loss = req.body.loss;
-				offer.realRate = req.body.realRate;
-				offer.update = req.body.update;
-				offer.rating = req.body.rating;
-
-			offer.save(function(err,offer){
-				if(err){
-					sendJsonResponse(res, 400, err);
-				} else {
-					sendJsonResponse(res, 200, offer);
-				}
-			});
-	});
-};
-
-module.exports.companyOfferDeleteOne = function(req,res){
-	var offerid = req.params.offerid;
-	if(offerid){
-		CompanyOffer
-		.findByIdAndRemove(offerid)
-		.exec(function(err, offer){
-			if(err){
-				sendJsonResponse(res, 400, err);
-			} else {
-				sendJsonResponse(res, 200, offer);
-			}
-		});
-	} else {
-		sendJsonResponse(res, 404, {"message": "Offer id not found"});
-	}
-};

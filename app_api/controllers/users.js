@@ -4,7 +4,7 @@ var User = mongoose.model('Users');
 var sendJsonResponse = function(res, status, content){
 	res.status(status);
 	res.json(content);
-}
+};
 
 String.prototype.toObjectId = function() {
   var ObjectId = (require('mongoose').Types.ObjectId);
