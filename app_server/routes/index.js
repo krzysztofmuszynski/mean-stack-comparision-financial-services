@@ -1,22 +1,27 @@
-var express = require('express');
-var router = express.Router();
-var ctrlCompanies = require('../controllers/companies');
-var ctrlOthers = require('../controllers/others');
 
-// GET companies pages.
+(function () {
 
-// router.get('/', ctrlCompanies.homelist);
+	var express = require('express');
+	var router = express.Router();
+	var ctrlCompanies = require('../controllers/companies');
+	var ctrlOthers = require('../controllers/others');
 
-// router.get('/company', ctrlCompanies.companyInfo);
+	// GET companies pages.
 
-// router.get('/company/review/new', ctrlCompanies.addReview);
+	// router.get('/', ctrlCompanies.homelist);
 
-// GET other pages.
+	// router.get('/company', ctrlCompanies.companyInfo);
 
-// router.get('/about', ctrlOthers.about);
+	// router.get('/company/review/new', ctrlCompanies.addReview);
 
-// GET angular view
+	// GET other pages.
 
-router.get('/', ctrlOthers.angularApp);
+	// router.get('/about', ctrlOthers.about);
 
-module.exports = router;
+	// GET angular view
+
+	router.get('/', ctrlOthers.angularApp);
+
+	module.exports = router;
+
+}) () ;

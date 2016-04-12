@@ -1,0 +1,104 @@
+<!DOCTYPE //if lt IE 7>
+<html lang="" class="no-js lt-ie9 lt-ie8 lt-ie7">
+
+</html>
+<!--if IE 7html.no-js.lt-ie9.lt-ie8(lang='')  -->
+<!--if IE 8html.no-js.lt-ie9(lang='')  -->
+<!-- [if gt IE 8] <!-->
+<html ng-app="companyApp" lang="" class="no-js">
+<!-- <![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/stylesheets/normalize.min.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <script src="/javascripts/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="/angular/angular.js"></script>
+    <script src="/lib/angular-route.js"></script>
+    <script src="/app.js"></script>
+    <script src="/common/services/companyData.service.js"></script>
+    <script src="/home/home.controller.js"></script>
+    <script src="/common/directive/ratingStars/ratingStars.directive.js"></script>
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-3">
+                    <a href="http://www.przelewdokraju.pl"><img src="/images/logo.png" alt="Przelewy Do Kraju" class="logo" /></a>
+                </div>
+                <div class="col-sm-12 col-md-9">
+                    <ul id="menu" class="pull-right">
+                        <li><a href="#">Wybierz kraj</a></li>
+                        <li><a href="#">Kursy walut</a></li>
+                        <li><a href="#">Rejestracja</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div id="bcg-01" class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="col-xs-12 col-sm-6">
+                            <h1 id="slogan-01">Poniewaz nikt nie lubi przeplacac przygotowalismy zestawienie najtanszych przelewow zagranicznych. Mam nadzieje, ze dzieki temu uda sie Tobie zaoszczedzic spora sume pieniedzy.            </h1>
+                            <h2 id="slogan-02">Zestawienie znajdziesz ponizej.</h2></div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div id="rect-01" class="pull-right">
+                                <div id="currency-rate" class="col-xs-12">
+                                    <p>Kursy walut</p>
+                                </div>
+                                <div class="currency-name col-xs-6">
+                                    <p class="pull-left">USD/PLN</p>
+                                </div>
+                                <div class="rate col-xs-6">
+                                    <p class="pull-right usdpln">4.01</p>
+                                </div>
+                                <div class="currency-name col-xs-6">
+                                    <p class="pull-left">USD/EUR</p>
+                                </div>
+                                <div class="rate col-xs-6">
+                                    <p class="pull-right usdeur">0.91</p>
+                                </div>
+                                <div class="currency-name col-xs-6">
+                                    <p class="pull-left">USD/GBP</p>
+                                </div>
+                                <div class="rate col-xs-6">
+                                    <p class="pull-right usdgbp">0.68</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="container-block">
+        <div ng-view="ng-view"> </div>
+    </div>
+    <footer>
+        <div id="footer" class="container-fluid">
+            <div class="container">
+                <div class="col-xs-12">
+                    <h3 class="service-desc">Por&oacute;wnanie ofert zosta&lstrok;o przygotowane w oparciu o inofrmacje dostepne na stronach internetowych prezentowanych firm.<br/> W zwiazku z tym porownanie nie gwarantuje ze w danym momencie oferta nie ulegla zmianie. <br/> Porownanie ma na celu przyblizenie ofert i pokazania roznic ale w celu upewnienia sie <br/>co do poprawnosci danych prosze o sprawdzenie ofert bezposrednio na stronach podanych firm.</h3></div>
+            </div>
+        </div>
+    </footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="/javascripts/vendor/jquery-1.11.2.min.js"><\\/script>')
+    </script>
+    <script src="/javascripts/plugins.js"></script>
+    <script src="/javascripts/main.js"></script>
+</body>
+
+</html>
