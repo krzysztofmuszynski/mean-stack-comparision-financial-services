@@ -7,6 +7,10 @@
 
 		var vm = $scope;
 
+		if(window.location.pathname !== '/'){
+			window.location.href = '/#' + window.location.pathname;
+		}
+
 		companyCompareData
 			.success(function(data){
 				vm.data = {companies: data};

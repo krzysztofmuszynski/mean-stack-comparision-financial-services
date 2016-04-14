@@ -22,6 +22,8 @@
 
 	router.get('/', ctrlOthers.angularApp);
 
+	// router.get('/onas', ctrlOthers.onas);
+
 	module.exports = router;
 
 }) () ;
