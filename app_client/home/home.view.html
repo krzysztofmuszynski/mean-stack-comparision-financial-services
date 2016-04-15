@@ -95,7 +95,7 @@
                 <div id="rank-01" ng-repeat="company in data.companies" class="container ranking-header">
                     <row>
                         <div class="col-xs-12 compare-group">
-                            <div class="compare-elem company-name col-xs-2"><img ng-src="{{company.imgSrc}}" ng-alt="{{company.imgAlt}}" class="maxwidth" /></div>
+                            <div class="compare-elem company-name col-xs-2"><a href="/#{{company.name}}"><img ng-src="{{company.imgSrc}}" ng-alt="{{company.imgAlt}}" class="maxwidth" /></a></div>
                             <div class="compare-elem col-xs-2">
                                 <p>{{company.currencyRate}}</p>
                             </div>
