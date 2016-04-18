@@ -3,7 +3,7 @@
 	angular.module('companyApp')
 		.controller('homeCtrl', homeCtrl);
 
-	function homeCtrl($scope, companyCompareData){
+	function homeCtrl($scope,companyCompareData){
 
 		var vm = $scope;
 

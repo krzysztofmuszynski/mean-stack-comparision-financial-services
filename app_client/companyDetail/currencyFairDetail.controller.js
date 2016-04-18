@@ -3,11 +3,17 @@
 	angular.module('companyApp')
 		.controller('currencyFairDetailCtrl', currencyFairDetailCtrl);
 
-	function currencyFairDetailCtrl(){
+	function currencyFairDetailCtrl($scope,currencyFairDetailData){
 
-		var vm = this;
+		var vm = $scope;
 
-		vm.main = {content: ''};
+		currencyFairDetailData
+			.success(function(data){
+				vm.data = {company: data};
+			})
+			.error(function(error){
+				console.log(error);
+			});
 
 	}
 

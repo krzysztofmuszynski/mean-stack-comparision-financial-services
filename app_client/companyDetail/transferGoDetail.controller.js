@@ -3,11 +3,16 @@
 	angular.module('companyApp')
 		.controller('transferGoDetailCtrl', transferGoDetailCtrl);
 
-	function transferGoDetailCtrl(){
+	function transferGoDetailCtrl($scope, transferGoDetailData){
 
-		var vm = this;
+		var vm = $scope;
 
-		vm.main = {content: ''};
+		transferGoDetailData
+			.success(function(data){
+				vm.data = {company: data};
+			}).error(function(error){
+				console.log(error);
+			});
 
 	}
 

@@ -3,13 +3,17 @@
 	angular.module('companyApp')
 		.controller('torFxDetailCtrl', torFxDetailCtrl);
 
-	function torFxDetailCtrl(){
+	function torFxDetailCtrl($scope,torFxDetailData){
 
-		var vm = this;
+		var vm = $scope;
 
-		vm.main = {
-			content: ''
-		};
+		torFxDetailData
+			.success(function(data){
+				vm.data = {company: data};
+			})
+			.error(function(error){
+				console.log(error);
+			})
 
 	}
 

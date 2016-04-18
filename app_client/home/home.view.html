@@ -92,7 +92,7 @@
                         </div>
                     </row>
                 </div>
-                <div id="rank-01" ng-repeat="company in data.companies" class="container ranking-header">
+                <div id="rank-01" ng-repeat="company in data.companies | orderBy:'loss'" class="container ranking-header">
                     <row>
                         <div class="col-xs-12 compare-group">
                             <div class="compare-elem company-name col-xs-2"><a href="/#{{company.name}}"><img ng-src="{{company.imgSrc}}" ng-alt="{{company.imgAlt}}" class="maxwidth" /></a></div>
@@ -126,7 +126,7 @@
                 <div id="rank-01" ng-repeat="company in data.companies" class="container ranking-header">
                     <row>
                         <div class="col-xs-12 compare-group">
-                            <div class="compare-elem company-name col-xs-12"><img src="{{company.imgSrc}}" alt="{{company.imgAlt}}" /></div>
+                            <div class="compare-elem company-name col-xs-12"><a href="/#{{company.name}}"><img src="{{company.imgSrc}}" alt="{{company.imgAlt}}" /></a></div>
                             <div class="compare-title col-xs-6">
                                 <p class="pull-left">Kurs wymiany</p>
                             </div>

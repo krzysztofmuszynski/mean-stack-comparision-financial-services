@@ -5,6 +5,8 @@ var ctrlCompanies = require('../controllers/companies');
 
 var ctrlCompaniesCompare = require('../controllers/companiesCompare');
 
+var ctrlCompaniesDetails = require('../controllers/companiesDetails');
+
 var ctrlReviews = require('../controllers/reviews');
 
 var ctrlUser = require('../controllers/users');
@@ -23,6 +25,15 @@ router.post('/compare', ctrlCompaniesCompare.offerCreateOne);
 router.get('/compare/:offerid', ctrlCompaniesCompare.offerReadOne);
 router.put('/compare/:offerid', ctrlCompaniesCompare.offerUpdateOne);
 router.delete('/compare/:offerid', ctrlCompaniesCompare.offerDeleteOne);
+
+// company details
+
+router.get('/company', ctrlCompaniesDetails.companiesDetailsReadAll);
+router.get('/company/:companyid', ctrlCompaniesDetails.companiesDetailsReadOne);
+router.post('/company', ctrlCompaniesDetails.companiesDetailsCreateOne);
+router.put('/company/:companyid', ctrlCompaniesDetails.companiesDetailsUpdateOne);
+router.delete('/company/:companyid', ctrlCompaniesDetails.companiesDetailsDeleteOne);
+
 
 // reviews
 

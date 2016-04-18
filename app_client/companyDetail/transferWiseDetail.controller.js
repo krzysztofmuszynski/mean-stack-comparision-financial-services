@@ -3,11 +3,17 @@
 	angular.module('companyApp')
 		.controller('transferWiseDetailCtrl', transferWiseDetailCtrl);
 
-	function transferWiseDetailCtrl(){
+	function transferWiseDetailCtrl($scope,transferWiseDetailData){
 
-		var vm = this;
+		var vm = $scope;
 
-		vm.main = {content: ''};
+		transferWiseDetailData
+			.success(function(data){
+				vm.data = {company: data};
+			})
+			.error(function(error){
+				console.log(error);
+			});
 
 	}
 

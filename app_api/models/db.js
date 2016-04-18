@@ -49,4 +49,5 @@ process.on('SIGTERM', function(){
 
 require('./companies');
 require('./companiesCompare');
+require('./companiesDetails');
 require('./users');

@@ -12,6 +12,7 @@ var routesApi = require('./app_api/routes/index');
 // var users = require('./app_server/routes/users');
 var Companies = require('./app_api/models/companies');
 var CompaniesOffer = require('./app_api/models/companiesCompare');
+var CompaniesDetails = require('./app_api/models/companiesDetails');
 var Users = require('./app_api/models/users');
 
 var app = express();
