@@ -10,10 +10,10 @@ var companiesCompareSchema = new Schema({
 	amount: String,
 	loss: String,
 	realRate: String,
-	update: { type: Date, default: Date.now },
-	rating: {type: Number, 'default': 0, min: 0, max: 5},
-	createdOn: { type: Date, default: Date.now },
-	modifiedOn: Date
+	// update: { type: Date, default: Date.now },
+	// rating: {type: Number, 'default': 0, min: 0, max: 5},
+	// createdOn: { type: Date, default: Date.now },
+	// modifiedOn: Date
 });
 
 mongoose.model('CompaniesCompare', companiesCompareSchema);

@@ -86,7 +86,7 @@ module.exports.offerUpdateOne = function(req,res){
 			} else if(err){
 				sendJsonResponse(res, 400, err);
 				return;
-			}
+			} else {
 
 				offer.name = req.body.name;
 				offer.imgSrc = req.body.imgSrc;
@@ -108,6 +108,7 @@ module.exports.offerUpdateOne = function(req,res){
 					sendJsonResponse(res, 200, offer);
 				}
 			});
+		}
 	});
 };
 
