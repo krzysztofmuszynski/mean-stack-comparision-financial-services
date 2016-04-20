@@ -2,7 +2,7 @@
 
 	// Return data from currency base to load on the page!
 
-	var URL = "https://www.apilayer.net/api/live?access_key=a941734716b80744c1ba38a1573e0837&format=1",
+	var URL = "http://www.apilayer.net/api/live?access_key=a941734716b80744c1ba38a1573e0837&format=1",
 			$usdpln = $('.usdpln'),
 			$usdeur = $('.usdeur'),
 			$usdgbp = $('.usdgbp');
