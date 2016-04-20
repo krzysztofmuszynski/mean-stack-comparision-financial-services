@@ -94,7 +94,7 @@
                         </div>
                     </row>
                 </div>
-                <div id="rank-01" ng-repeat="company in data.companies | orderBy:sortType | filter:query" class="container ranking-header">
+                <div id="rank-01" ng-repeat="company in data.companies | orderBy:'loss' | filter:query" class="container ranking-header">
                     <row>
                         <div class="col-xs-12 compare-group">
                             <div class="compare-elem company-name col-xs-2"><a href="/#{{company.name}}"><img ng-src="{{company.imgSrc}}" ng-alt="{{company.imgAlt}}" class="maxwidth" /></a></div>
